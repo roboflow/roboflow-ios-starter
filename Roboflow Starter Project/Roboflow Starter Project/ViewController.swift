@@ -206,6 +206,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 return
             }
             
+            guard let confidence = detectionInfo["confidence"] as? Double else {
+                return
+            }
+            
             guard let x = detectionInfo["x"] as? Float else {
                 return
             }
