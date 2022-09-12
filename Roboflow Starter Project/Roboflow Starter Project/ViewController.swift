@@ -182,7 +182,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 print(error!)
             } else {
                 let detectionResults: [RFObjectDetectionPrediction] = detections!
-                
+                self.drawBoundingBoxesFrom(detections: detectionResults)
+
                 DispatchQueue.main.async { [self] in
                     let duration = start.distance(to: .now())
                     let durationDouble = duration.toDouble()
@@ -192,6 +193,50 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 }
             }
         })
+    }
+    
+    func drawBoundingBoxesFrom(detections: [RFObjectDetectionPrediction]) {
+        CATransaction.begin()
+        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+        detectionOverlay.sublayers = nil // remove all the old recognized objects
+
+        for detection in detections {
+            let detectionInfo = detection.vals()
+            guard let detectedValue = detectionInfo["class"] as? String else {
+                return
+            }
+            
+            guard let x = detectionInfo["x"] as? Float else {
+                return
+            }
+
+            guard let y = detectionInfo["y"] as? Float else {
+                return
+            }
+            
+            guard let width = detectionInfo["width"] as? Float else {
+                return
+            }
+
+            guard let height = detectionInfo["height"] as? Float else {
+                return
+            }
+            
+            guard let color = detectionInfo["color"] as? [Int] else {
+                return
+            }
+            
+            let red: Int = color[0]
+            let green: Int = color[1]
+            let blue: Int = color[2]
+            let boundingBoxColor = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 0.2)
+            let bounds = detectionOverlay.bounds
+            let xs = bounds.width/bufferSize.width
+            let ys = bounds.height/bufferSize.height
+            let boundingBox: CGRect = CGRect(x: CGFloat(x)*xs, y: CGFloat(y)*ys, width: CGFloat(width)*xs, height: CGFloat(height)*ys)
+            drawBoundingBox(boundingBox: boundingBox, color: boundingBoxColor)
+        }
+        CATransaction.commit()
     }
     
     func drawBoundingBox(boundingBox: CGRect, color: UIColor) {
@@ -235,7 +280,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         CATransaction.commit()
     }
-    
     
     @IBAction func uploadImage(_ sender: Any) {
 
