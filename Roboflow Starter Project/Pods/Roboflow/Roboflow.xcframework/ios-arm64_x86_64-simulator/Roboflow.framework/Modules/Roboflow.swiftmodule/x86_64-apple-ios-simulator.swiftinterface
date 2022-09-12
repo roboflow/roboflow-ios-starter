@@ -1,0 +1,61 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target x86_64-apple-ios15.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Roboflow
+import CoreML
+import Foundation
+@_exported import Roboflow
+import Swift
+import UIKit
+import VideoToolbox
+import Vision
+import _Concurrency
+extension Swift.String : Swift.Error {
+}
+@objc @_inheritsConvenienceInitializers public class RFObjectDetectionModel : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  public func configure(threshold: Swift.Double, overlap: Swift.Double, maxObjects: Swift.Float)
+  @available(*, renamed: "detect(image:)")
+  public func detect(image: UIKit.UIImage, completion: @escaping (([Roboflow.RFObjectDetectionPrediction]?, Swift.Error?) -> Swift.Void))
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func detect(image: UIKit.UIImage) async -> ([Roboflow.RFObjectDetectionPrediction]?, Swift.Error?)
+  #endif
+
+  public func detect(pixelBuffer: CoreVideo.CVPixelBuffer, completion: @escaping (([Roboflow.RFObjectDetectionPrediction]?, Swift.Error?) -> Swift.Void))
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func detect(pixelBuffer: CoreVideo.CVPixelBuffer) async -> ([Roboflow.RFObjectDetectionPrediction]?, Swift.Error?)
+  #endif
+
+  @objc deinit
+}
+public struct RFObjectDetectionPrediction {
+  public func vals() -> [Swift.String : Any]
+}
+@objc public class RoboflowMobile : ObjectiveC.NSObject {
+  public init(apiKey: Swift.String)
+  @available(*, renamed: "load(model:modelVersion:)")
+  public func load(model: Swift.String, modelVersion: Swift.Int, completion: @escaping (Roboflow.RFObjectDetectionModel?, Swift.Error?, Swift.String, Swift.String) -> ())
+  
+  #if compiler(>=5.3) && $AsyncAwait
+  public func load(model: Swift.String, modelVersion: Swift.Int) async -> (Roboflow.RFObjectDetectionModel?, Swift.Error?, Swift.String, Swift.String)
+  #endif
+
+  public func uploadImage(image: UIKit.UIImage, project: Swift.String, completion: @escaping (Roboflow.UploadResult) -> ())
+  @objc deinit
+}
+public enum UploadResult {
+  case Success
+  case Duplicate
+  case Error
+  public static func == (a: Roboflow.UploadResult, b: Roboflow.UploadResult) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIImage {
+  convenience public init?(pixelBuffer: CoreVideo.CVPixelBuffer)
+}
+extension Roboflow.UploadResult : Swift.Equatable {}
+extension Roboflow.UploadResult : Swift.Hashable {}

@@ -1,0 +1,11 @@
+framework module Roboflow {
+  umbrella header "Roboflow.h"
+
+  export *
+  module * { export * }
+}
+
+module Roboflow.Swift {
+    header "Roboflow-Swift.h"
+    requires objc
+}

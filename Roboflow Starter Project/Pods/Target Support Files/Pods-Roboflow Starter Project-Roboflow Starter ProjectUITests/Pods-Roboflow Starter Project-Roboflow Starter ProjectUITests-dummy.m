@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests
+@end

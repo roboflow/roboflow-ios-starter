@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import Vision
+import Roboflow
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 

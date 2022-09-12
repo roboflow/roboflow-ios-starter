@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0559659FBEC722565C644C7B /* Pods_Roboflow_Starter_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86DAB51BE195450764BAE5D9 /* Pods_Roboflow_Starter_ProjectTests.framework */; };
+		107AEC64DEDB0990A6DD1755 /* Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4DF3C16066BAD40F0FB041 /* Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework */; };
+		4BA8320D4B2F4959F29E0CFA /* Pods_Roboflow_Starter_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825A5FE5D272C2D88867C44C /* Pods_Roboflow_Starter_Project.framework */; };
 		E4699FCF28CE96A40099DD5A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4699FCE28CE96A40099DD5A /* UIImage+Extension.swift */; };
 		E4B079D428CE930C00A2237F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B079D328CE930C00A2237F /* AppDelegate.swift */; };
 		E4B079D628CE930C00A2237F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B079D528CE930C00A2237F /* SceneDelegate.swift */; };
@@ -37,6 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290EC6B15D25230B8D2EA4F6 /* Pods-Roboflow Starter Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roboflow Starter Project.release.xcconfig"; path = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project.release.xcconfig"; sourceTree = "<group>"; };
+		3D4DF3C16066BAD40F0FB041 /* Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		638EEA40AE1AF7F7111490A7 /* Pods-Roboflow Starter ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roboflow Starter ProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-Roboflow Starter ProjectTests/Pods-Roboflow Starter ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		825A5FE5D272C2D88867C44C /* Pods_Roboflow_Starter_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roboflow_Starter_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86DAB51BE195450764BAE5D9 /* Pods_Roboflow_Starter_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Roboflow_Starter_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60EAB2F015AA9AD85CD8553 /* Pods-Roboflow Starter ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roboflow Starter ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Roboflow Starter ProjectTests/Pods-Roboflow Starter ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC0BB53BCFD00C6EFD268386 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AC20DE72D4A38DAEB673DB77 /* Pods-Roboflow Starter Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roboflow Starter Project.debug.xcconfig"; path = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project.debug.xcconfig"; sourceTree = "<group>"; };
+		B5215DF21BEC851F3B36EBBE /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4699FCE28CE96A40099DD5A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		E4B079D028CE930C00A2237F /* Roboflow Starter Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roboflow Starter Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B079D328CE930C00A2237F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA8320D4B2F4959F29E0CFA /* Pods_Roboflow_Starter_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0559659FBEC722565C644C7B /* Pods_Roboflow_Starter_ProjectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107AEC64DEDB0990A6DD1755 /* Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D6727B91A92225D16976224 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				825A5FE5D272C2D88867C44C /* Pods_Roboflow_Starter_Project.framework */,
+				3D4DF3C16066BAD40F0FB041 /* Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework */,
+				86DAB51BE195450764BAE5D9 /* Pods_Roboflow_Starter_ProjectTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		750B6AFFC920BE59C2A4FCC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC20DE72D4A38DAEB673DB77 /* Pods-Roboflow Starter Project.debug.xcconfig */,
+				290EC6B15D25230B8D2EA4F6 /* Pods-Roboflow Starter Project.release.xcconfig */,
+				B5215DF21BEC851F3B36EBBE /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig */,
+				AC0BB53BCFD00C6EFD268386 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig */,
+				638EEA40AE1AF7F7111490A7 /* Pods-Roboflow Starter ProjectTests.debug.xcconfig */,
+				A60EAB2F015AA9AD85CD8553 /* Pods-Roboflow Starter ProjectTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E4B079C728CE930C00A2237F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +124,8 @@
 				E4B079E928CE931100A2237F /* Roboflow Starter ProjectTests */,
 				E4B079F328CE931100A2237F /* Roboflow Starter ProjectUITests */,
 				E4B079D128CE930C00A2237F /* Products */,
+				750B6AFFC920BE59C2A4FCC4 /* Pods */,
+				3D6727B91A92225D16976224 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4B079FA28CE931100A2237F /* Build configuration list for PBXNativeTarget "Roboflow Starter Project" */;
 			buildPhases = (
+				68D318704DF3FEF0F191E7FE /* [CP] Check Pods Manifest.lock */,
 				E4B079CC28CE930C00A2237F /* Sources */,
 				E4B079CD28CE930C00A2237F /* Frameworks */,
 				E4B079CE28CE930C00A2237F /* Resources */,
+				15D3F60ED9ADE691EB16CF15 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4B079FD28CE931100A2237F /* Build configuration list for PBXNativeTarget "Roboflow Starter ProjectTests" */;
 			buildPhases = (
+				98E252AD6AEE3F4AAD678B85 /* [CP] Check Pods Manifest.lock */,
 				E4B079E228CE931100A2237F /* Sources */,
 				E4B079E328CE931100A2237F /* Frameworks */,
 				E4B079E428CE931100A2237F /* Resources */,
@@ -172,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E4B07A0028CE931100A2237F /* Build configuration list for PBXNativeTarget "Roboflow Starter ProjectUITests" */;
 			buildPhases = (
+				2FEEF245376AE0855681D0D4 /* [CP] Check Pods Manifest.lock */,
 				E4B079EC28CE931100A2237F /* Sources */,
 				E4B079ED28CE931100A2237F /* Frameworks */,
 				E4B079EE28CE931100A2237F /* Resources */,
+				5D18C18978C885A9301ABB97 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +301,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15D3F60ED9ADE691EB16CF15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FEEF245376AE0855681D0D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D18C18978C885A9301ABB97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68D318704DF3FEF0F191E7FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Roboflow Starter Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98E252AD6AEE3F4AAD678B85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Roboflow Starter ProjectTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E4B079CC28CE930C00A2237F /* Sources */ = {
@@ -436,6 +585,7 @@
 		};
 		E4B079FB28CE931100A2237F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC20DE72D4A38DAEB673DB77 /* Pods-Roboflow Starter Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +614,7 @@
 		};
 		E4B079FC28CE931100A2237F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 290EC6B15D25230B8D2EA4F6 /* Pods-Roboflow Starter Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,6 +643,7 @@
 		};
 		E4B079FE28CE931100A2237F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 638EEA40AE1AF7F7111490A7 /* Pods-Roboflow Starter ProjectTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +664,7 @@
 		};
 		E4B079FF28CE931100A2237F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A60EAB2F015AA9AD85CD8553 /* Pods-Roboflow Starter ProjectTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +685,7 @@
 		};
 		E4B07A0128CE931100A2237F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5215DF21BEC851F3B36EBBE /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +704,7 @@
 		};
 		E4B07A0228CE931100A2237F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC0BB53BCFD00C6EFD268386 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
