@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHx-8I-3lN">
-                                <rect key="frame" x="120" y="797" width="176" height="31"/>
+                                <rect key="frame" x="119" y="797" width="176" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Upload Incorrect Image"/>
                                 <connections>
@@ -42,11 +42,11 @@
                             <constraint firstItem="Nqd-Ac-qQL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="205" id="9rf-EY-vKr"/>
                             <constraint firstItem="Nqd-Ac-qQL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9yE-dI-tqq"/>
                             <constraint firstItem="TQw-i1-0TK" firstAttribute="top" secondItem="Nqd-Ac-qQL" secondAttribute="bottom" constant="43" id="EFY-Ok-aWj"/>
-                            <constraint firstItem="zHx-8I-3lN" firstAttribute="top" secondItem="TQw-i1-0TK" secondAttribute="bottom" constant="44" id="M2l-Ak-ZH8"/>
+                            <constraint firstItem="zHx-8I-3lN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NEf-ei-Tbj"/>
                             <constraint firstItem="TQw-i1-0TK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="Wfo-ho-5qI"/>
                             <constraint firstItem="Nqd-Ac-qQL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cQc-N3-CLg"/>
+                            <constraint firstItem="zHx-8I-3lN" firstAttribute="top" secondItem="TQw-i1-0TK" secondAttribute="bottom" constant="44" id="fIC-Tb-hb1"/>
                             <constraint firstItem="TQw-i1-0TK" firstAttribute="centerX" secondItem="Nqd-Ac-qQL" secondAttribute="centerX" id="h5R-S6-uCl"/>
-                            <constraint firstItem="zHx-8I-3lN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="qkq-b8-oAL"/>
                         </constraints>
                     </view>
                     <connections>
