@@ -11,6 +11,7 @@
 		107AEC64DEDB0990A6DD1755 /* Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4DF3C16066BAD40F0FB041 /* Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework */; };
 		4BA8320D4B2F4959F29E0CFA /* Pods_Roboflow_Starter_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825A5FE5D272C2D88867C44C /* Pods_Roboflow_Starter_Project.framework */; };
 		E4699FCF28CE96A40099DD5A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4699FCE28CE96A40099DD5A /* UIImage+Extension.swift */; };
+		E48B4CFF28CF745D00A9B237 /* DispatchTimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48B4CFE28CF745D00A9B237 /* DispatchTimeInterval+Extension.swift */; };
 		E4B079D428CE930C00A2237F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B079D328CE930C00A2237F /* AppDelegate.swift */; };
 		E4B079D628CE930C00A2237F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B079D528CE930C00A2237F /* SceneDelegate.swift */; };
 		E4B079D828CE930C00A2237F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B079D728CE930C00A2237F /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		AC20DE72D4A38DAEB673DB77 /* Pods-Roboflow Starter Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roboflow Starter Project.debug.xcconfig"; path = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project.debug.xcconfig"; sourceTree = "<group>"; };
 		B5215DF21BEC851F3B36EBBE /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4699FCE28CE96A40099DD5A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		E48B4CFE28CF745D00A9B237 /* DispatchTimeInterval+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchTimeInterval+Extension.swift"; sourceTree = "<group>"; };
 		E4B079D028CE930C00A2237F /* Roboflow Starter Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roboflow Starter Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B079D328CE930C00A2237F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4B079D528CE930C00A2237F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +115,6 @@
 				638EEA40AE1AF7F7111490A7 /* Pods-Roboflow Starter ProjectTests.debug.xcconfig */,
 				A60EAB2F015AA9AD85CD8553 /* Pods-Roboflow Starter ProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -145,6 +146,7 @@
 				E4B079D328CE930C00A2237F /* AppDelegate.swift */,
 				E4B079D528CE930C00A2237F /* SceneDelegate.swift */,
 				E4B079D728CE930C00A2237F /* ViewController.swift */,
+				E48B4CFE28CF745D00A9B237 /* DispatchTimeInterval+Extension.swift */,
 				E4699FCE28CE96A40099DD5A /* UIImage+Extension.swift */,
 				E4B079D928CE930C00A2237F /* Main.storyboard */,
 				E4B079DC28CE931000A2237F /* Assets.xcassets */,
@@ -413,6 +415,7 @@
 				E4B079D828CE930C00A2237F /* ViewController.swift in Sources */,
 				E4B079D428CE930C00A2237F /* AppDelegate.swift in Sources */,
 				E4B079D628CE930C00A2237F /* SceneDelegate.swift in Sources */,
+				E48B4CFF28CF745D00A9B237 /* DispatchTimeInterval+Extension.swift in Sources */,
 				E4699FCF28CE96A40099DD5A /* UIImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

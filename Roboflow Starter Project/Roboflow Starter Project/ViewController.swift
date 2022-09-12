@@ -10,29 +10,35 @@ import AVFoundation
 import Vision
 import Roboflow
 
-class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
+class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    
     var bufferSize: CGSize = .zero
     var rootLayer: CALayer! = nil
-
+    
     private var detectionOverlay: CALayer! = nil
     var currentPixelBuffer: CVPixelBuffer!
-
+    
     private let session = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer! = nil
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
-
+    
     @IBOutlet weak private var previewView: UIView!
     @IBOutlet weak var fpsLabel: UILabel!
+    
+    
+    let rf = RoboflowMobile(apiKey: API_KEY)
+    var roboflowModel: RFObjectDetectionModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        loadRoboflowModelWith(model: "cash-counter", threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
         checkCameraAuthorization()
     }
-
+    
     func checkCameraAuthorization() {
         let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         
@@ -142,10 +148,22 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func startCaptureSession() {
         session.startRunning()
     }
-
+    
     func captureOutput(_ captureOutput: AVCaptureOutput, didDrop didDropSampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         print("frame dropped")
     }
+    
+    func loadRoboflowModelWith(model: String, threshold: Double, overlap: Double, maxObjects: Float) {
+        rf.load(model: model, modelVersion: 4) { [self] model, error, modelName, modelType in
+            roboflowModel = model
+            if error != nil {
+                print(error?.localizedDescription as Any)
+            } else {
+                roboflowModel?.configure(threshold: threshold, overlap: overlap, maxObjects: maxObjects)
+            }
+        }
+    }
+    
     
     var start: DispatchTime!
     var end: DispatchTime!
@@ -158,24 +176,22 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         let start: DispatchTime = .now()
         
-//        currencyModel?.detect(pixelBuffer: pixelBuffer, completion: { detections, error in
-//            if error != nil {
-//                print(error!)
-//            } else {
-//                let detectionResults: [RFObjectDetectionPrediction] = detections!
-//                self.calculateCurrencyAmount(detections: detectionResults)
-//
-//                DispatchQueue.main.async { [self] in
-//                    let duration = start.distance(to: .now())
-//                    let durationDouble = duration.toDouble()
-//                    var fps = 1 / durationDouble!
-//                    fps = round(fps)
-//                    fpsLabel.text = String(fps.description) + " FPS"
-//                }
-//            }
-//        })
+        roboflowModel?.detect(pixelBuffer: pixelBuffer, completion: { detections, error in
+            if error != nil {
+                print(error!)
+            } else {
+                let detectionResults: [RFObjectDetectionPrediction] = detections!
+                
+                DispatchQueue.main.async { [self] in
+                    let duration = start.distance(to: .now())
+                    let durationDouble = duration.toDouble()
+                    var fps = 1 / durationDouble!
+                    fps = round(fps)
+                    fpsLabel.text = String(fps.description) + " FPS"
+                }
+            }
+        })
     }
-
     
     func drawBoundingBox(boundingBox: CGRect, color: UIColor) {
         let shapeLayer = self.createRoundedRectLayerWithBounds(boundingBox, color: color)
@@ -200,24 +216,85 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func updateLayerGeometry() {
         let bounds = rootLayer.bounds
         var scale: CGFloat
-
+        
         let xScale: CGFloat = bounds.size.width / CGFloat(bufferSize.height)
         let yScale: CGFloat = bounds.size.height / CGFloat(bufferSize.width)
-
+        
         scale = fmax(xScale, yScale)
         if scale.isInfinite {
             scale = 1.0
         }
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-
+        
         // rotate the layer into screen orientation and scale and mirror
         detectionOverlay.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: scale, y: scale))
         // center the layer
         detectionOverlay.position = CGPoint (x: bounds.midX, y: bounds.midY)
-
+        
         CATransaction.commit()
     }
+    
+    
+    @IBAction func uploadImage(_ sender: Any) {
 
+        guard let pixelBuffer = currentPixelBuffer else {
+            return
+        }
+        
+        guard let capturedImage = UIImage(pixelBuffer: pixelBuffer) else {
+            return
+        }
+        
+        let rotatedImage = capturedImage.rotateImage(orientation: .down)
+        
+        let alert = UIAlertController(title: "Incorrect count?", message: "You've captured an image of this wrong count. Upload it to the open source dataset to improve this model.", preferredStyle: .alert)
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 100, width: 250, height: 230))
+        imageView.image = rotatedImage
+        alert.view.addSubview(imageView)
+        let height = NSLayoutConstraint(item: alert.view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 375)
+        let width = NSLayoutConstraint(item: alert.view!, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        alert.view.addConstraint(height)
+        alert.view.addConstraint(width)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+             }))
+        alert.addAction(UIAlertAction(title: "Upload", style: .default, handler: { [self] (_) in
+            upload(image: rotatedImage)
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func upload(image: UIImage) {
+        let project = "cash-counter"
+        
+        rf.uploadImage(image: image, project: project) { result in
+            var title: String!
+            var message: String!
+            
+            switch result {
+                case .Success:
+                    title = "Success!"
+                    message = " Your image has been uploaded to the open source training dataset for model improvement."
+                case .Duplicate:
+                    title = "Duplicate"
+                    message = "You attempted to upload a duplicate image."
+                case .Error:
+                    title = "Error"
+                    message = "An error occured while uploading your image."
+                @unknown default:
+                    return
+            }
+            
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
+                     }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
 }
 
