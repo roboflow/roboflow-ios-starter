@@ -10,6 +10,7 @@ import AVFoundation
 import Vision
 import Roboflow
 
+var API_KEY = "ENTER_API_KEY_HERE"
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
