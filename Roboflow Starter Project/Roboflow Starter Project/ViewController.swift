@@ -245,18 +245,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func drawBoundingBox(boundingBox: CGRect, color: UIColor, detectedValue: String, confidence: Double) {
         let shapeLayer = self.createRoundedRectLayerWithBounds(boundingBox, color: color)
-        
         let textLayer = self.createTextSubLayerInBounds(boundingBox,
                                                         identifier: detectedValue,
                                                         confidence: VNConfidence(confidence))
         shapeLayer.addSublayer(textLayer)
-
-        
-        
         
         detectionOverlay.addSublayer(shapeLayer)
-        
-   
         self.updateLayerGeometry()
     }
     
@@ -310,7 +304,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         textLayer.foregroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.0, 0.0, 1.0])
         textLayer.contentsScale = 2.0 // retina rendering
         // rotate the layer into screen orientation and scale and mirror
-        textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: 1.0, y: -1.0))
+        textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: -1.0, y: -1.0))
         return textLayer
     }
     
