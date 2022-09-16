@@ -7,7 +7,9 @@
 
 import Foundation
 
+//Converts a DispatchTimeInterval to a Double
 extension DispatchTimeInterval {
+    
     func toDouble() -> Double? {
         var result: Double? = 0
 

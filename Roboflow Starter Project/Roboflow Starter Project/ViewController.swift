@@ -28,7 +28,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     @IBOutlet weak private var previewView: UIView!
     @IBOutlet weak var fpsLabel: UILabel!
     
-    
+    //Initialize the Roboflow SDK
     let rf = RoboflowMobile(apiKey: API_KEY)
     var roboflowModel: RFObjectDetectionModel!
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loadRoboflowModelWith(model: "cash-counter", threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
+        loadRoboflowModelWith(model: "ENTER_YOUR_MODEL_NAME_HERE", threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
         checkCameraAuthorization()
     }
     
@@ -56,6 +56,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { [self] (granted) in
                 if granted {
                     DispatchQueue.main.async { [self] in
+                        //If we've been granted permission, start the camera session
                         setupAVCapture()
                     }
                 }
@@ -95,6 +96,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             return
         }
         session.addInput(deviceInput)
+        
         if session.canAddOutput(videoDataOutput) {
             session.addOutput(videoDataOutput)
             // Add a video data output
@@ -136,7 +138,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     func setupLayers() {
-        detectionOverlay = CALayer() // container layer that has all the renderings of the observations
+        detectionOverlay = CALayer() // Container layer that has all the renderings of the bounding boxes
         detectionOverlay.name = "DetectionOverlay"
         detectionOverlay.bounds = CGRect(x: 0.0,
                                          y: 0.0,
@@ -153,6 +155,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func captureOutput(_ captureOutput: AVCaptureOutput, didDrop didDropSampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         print("frame dropped")
     }
+    
     
     func loadRoboflowModelWith(model: String, threshold: Double, overlap: Double, maxObjects: Float) {
         rf.load(model: model, modelVersion: 4) { [self] model, error, modelName, modelType in
@@ -184,6 +187,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 let detectionResults: [RFObjectDetectionPrediction] = detections!
                 self.drawBoundingBoxesFrom(detections: detectionResults)
 
+                //Caclulate and display the FPS of the ML inference
                 DispatchQueue.main.async { [self] in
                     let duration = start.distance(to: .now())
                     let durationDouble = duration.toDouble()
@@ -198,8 +202,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func drawBoundingBoxesFrom(detections: [RFObjectDetectionPrediction]) {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        detectionOverlay.sublayers = nil // remove all the old recognized objects
+        detectionOverlay.sublayers = nil // Remove all the old recognized objects' bounding boxes from the UI
 
+        //Extract the dictionary values of the predicted class
         for detection in detections {
             let detectionInfo = detection.vals()
             guard let detectedValue = detectionInfo["class"] as? String else {
@@ -230,6 +235,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 return
             }
             
+            //Calculate the shape, position, and color values of the detection bounding box
             let red: Int = color[0]
             let green: Int = color[1]
             let blue: Int = color[2]
@@ -237,12 +243,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             let bounds = detectionOverlay.bounds
             let xs = bounds.width/bufferSize.width
             let ys = bounds.height/bufferSize.height
+            
+            //Create the CGRect for the bounding box, and draw it on the screen
             let boundingBox: CGRect = CGRect(x: CGFloat(x)*xs, y: CGFloat(y)*ys, width: CGFloat(width)*xs, height: CGFloat(height)*ys)
             drawBoundingBox(boundingBox: boundingBox, color: boundingBoxColor, detectedValue: detectedValue, confidence: confidence)
         }
         CATransaction.commit()
     }
     
+    //Create a bounding box and add it as a layer to the UI
     func drawBoundingBox(boundingBox: CGRect, color: UIColor, detectedValue: String, confidence: Double) {
         let shapeLayer = self.createRoundedRectLayerWithBounds(boundingBox, color: color)
         let textLayer = self.createTextSubLayerInBounds(boundingBox,
@@ -254,42 +263,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         self.updateLayerGeometry()
     }
     
-    func createRoundedRectLayerWithBounds(_ bounds: CGRect, color: UIColor) -> CALayer {
-        let shapeLayer = CALayer()
-        shapeLayer.bounds = bounds
-        shapeLayer.position = CGPoint(x: bounds.origin.x, y: bounds.origin.y)
-        shapeLayer.name = "Found Object"
-        
-        var colorComponents = color.cgColor.components
-        colorComponents?.removeLast()
-        colorComponents?.append(0.4)
-        shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: colorComponents!)
-        shapeLayer.cornerRadius = 7
-        return shapeLayer
-    }
-    
-    func updateLayerGeometry() {
-        let bounds = rootLayer.bounds
-        var scale: CGFloat
-        
-        let xScale: CGFloat = bounds.size.width / CGFloat(bufferSize.height)
-        let yScale: CGFloat = bounds.size.height / CGFloat(bufferSize.width)
-        
-        scale = fmax(xScale, yScale)
-        if scale.isInfinite {
-            scale = 1.0
-        }
-        CATransaction.begin()
-        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        
-        // rotate the layer into screen orientation and scale and mirror
-        detectionOverlay.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: scale, y: scale))
-        // center the layer
-        detectionOverlay.position = CGPoint (x: bounds.midX, y: bounds.midY)
-        
-        CATransaction.commit()
-    }
-    
+    //Create a layer displaying the classification result and it's confidence
     func createTextSubLayerInBounds(_ bounds: CGRect, identifier: String, confidence: VNConfidence) -> CATextLayer {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
@@ -304,17 +278,57 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         textLayer.string = formattedString
         textLayer.bounds = CGRect(x: 0, y: 0, width: bounds.size.height - 10, height: bounds.size.width - 10)
         textLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
-        textLayer.shadowOpacity = 0.7
         textLayer.shadowOffset = CGSize(width: 2, height: 2)
         textLayer.foregroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [0.0, 0.0, 0.0, 1.0])
         textLayer.contentsScale = 2.0 // retina rendering
-        // rotate the layer into screen orientation and scale and mirror
+        
+        // Rotate the layer into screen orientation and scale and mirror
         textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: -1.0, y: -1.0))
         return textLayer
     }
     
+    //Creates the shape for bounding boxes to be displayed on the screen
+    func createRoundedRectLayerWithBounds(_ bounds: CGRect, color: UIColor) -> CALayer {
+        let shapeLayer = CALayer()
+        shapeLayer.bounds = bounds
+        shapeLayer.position = CGPoint(x: bounds.origin.x, y: bounds.origin.y)
+        shapeLayer.name = "Found Object"
+        
+        var colorComponents = color.cgColor.components
+        colorComponents?.removeLast()
+        colorComponents?.append(0.4)
+        shapeLayer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: colorComponents!)
+        shapeLayer.cornerRadius = 7
+        return shapeLayer
+    }
+    
+    //Update the position of the bounding-box overlay 
+    func updateLayerGeometry() {
+        let bounds = rootLayer.bounds
+        var scale: CGFloat
+        
+        let xScale: CGFloat = bounds.size.width / CGFloat(bufferSize.height)
+        let yScale: CGFloat = bounds.size.height / CGFloat(bufferSize.width)
+        
+        scale = fmax(xScale, yScale)
+        if scale.isInfinite {
+            scale = 1.0
+        }
+        CATransaction.begin()
+        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+        
+        // Rotate the layer into screen orientation and scale and mirror
+        detectionOverlay.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: scale, y: scale))
+        // Center the layer
+        detectionOverlay.position = CGPoint (x: bounds.midX, y: bounds.midY)
+        
+        CATransaction.commit()
+    }
+        
+    //Starts upload flow for if a user wants to upload the camera frame where an incorrect image classification occured
     @IBAction func uploadImage(_ sender: Any) {
 
+        //Capture the current pixel buffer of the camera and convert it an image
         guard let pixelBuffer = currentPixelBuffer else {
             return
         }
@@ -337,12 +351,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
              }))
         alert.addAction(UIAlertAction(title: "Upload", style: .default, handler: { [self] (_) in
+            //Upload the captured image to your dataset
             upload(image: rotatedImage)
         }))
 
         self.present(alert, animated: true, completion: nil)
     }
     
+    //Uploads the incorrect classification frame 
     func upload(image: UIImage) {
         let project = "cash-counter"
         
