@@ -10,7 +10,7 @@ import AVFoundation
 import Vision
 import Roboflow
 
-var API_KEY = "ENTER_API_KEY_HERE"
+var API_KEY = "ENTER_YOUR_API_KEY_HERE"
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -39,6 +39,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         loadRoboflowModelWith(model: "ENTER_YOUR_MODEL_NAME_HERE", threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
         checkCameraAuthorization()
     }
+    
+    //--------------------------
+    //MARK: Camera Session
+    //--------------------------
     
     func checkCameraAuthorization() {
         let authStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
@@ -137,7 +141,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         }
     }
     
-    
     @IBAction func changeCameraDirection(_ sender: Any) {
         switchCamera()
     }
@@ -168,16 +171,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         return discoverySession.devices.first
     }
     
-    func setupLayers() {
-        detectionOverlay = CALayer() // Container layer that has all the renderings of the bounding boxes
-        detectionOverlay.name = "DetectionOverlay"
-        detectionOverlay.bounds = CGRect(x: 0.0,
-                                         y: 0.0,
-                                         width: bufferSize.width,
-                                         height: bufferSize.height)
-        detectionOverlay.position = CGPoint(x: rootLayer.bounds.midX, y: rootLayer.bounds.midY)
-        rootLayer.addSublayer(detectionOverlay)
-    }
     
     func startCaptureSession() {
         DispatchQueue.global(qos: .background).async { [self] in
@@ -189,6 +182,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         print("frame dropped")
     }
     
+    //--------------------------
+    //MARK: Model Inference
+    //--------------------------
     
     func loadRoboflowModelWith(model: String, threshold: Double, overlap: Double, maxObjects: Float) {
         rf.load(model: model, modelVersion: 4) { [self] model, error, modelName, modelType in
@@ -200,7 +196,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             }
         }
     }
-    
     
     var start: DispatchTime!
     var end: DispatchTime!
@@ -230,6 +225,21 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 }
             }
         })
+    }
+    
+    //--------------------------
+    //MARK: Bounding Boxes
+    //--------------------------
+    
+    func setupLayers() {
+        detectionOverlay = CALayer() // Container layer that has all the renderings of the bounding boxes
+        detectionOverlay.name = "DetectionOverlay"
+        detectionOverlay.bounds = CGRect(x: 0.0,
+                                         y: 0.0,
+                                         width: bufferSize.width,
+                                         height: bufferSize.height)
+        detectionOverlay.position = CGPoint(x: rootLayer.bounds.midX, y: rootLayer.bounds.midY)
+        rootLayer.addSublayer(detectionOverlay)
     }
     
     func drawBoundingBoxesFrom(detections: [RFObjectDetectionPrediction]) {
@@ -358,6 +368,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         CATransaction.commit()
     }
     
+    //--------------------------
+    //MARK: Image Uploading
+    //--------------------------
+    
     //Starts upload flow for if a user wants to upload the camera frame where an incorrect image classification occured
     @IBAction func uploadImage(_ sender: Any) {
         
@@ -421,7 +435,5 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             }
         }
     }
-    
-
     
 }
