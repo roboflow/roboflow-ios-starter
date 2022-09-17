@@ -149,7 +149,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     func startCaptureSession() {
-        session.startRunning()
+        DispatchQueue.global(qos: .background).async { [self] in
+            session.startRunning()
+        }
     }
     
     func captureOutput(_ captureOutput: AVCaptureOutput, didDrop didDropSampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
