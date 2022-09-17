@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nqd-Ac-qQL">
-                                <rect key="frame" x="0.0" y="249" width="414" height="440"/>
+                                <rect key="frame" x="0.0" y="253" width="414" height="436"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQw-i1-0TK">
@@ -27,13 +28,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHx-8I-3lN">
-                                <rect key="frame" x="119" y="797" width="176" height="31"/>
+                                <rect key="frame" x="106" y="797" width="202.5" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Upload Incorrect Image"/>
                                 <connections>
                                     <action selector="uploadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cdi-kv-iqL"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y5o-R4-S9b">
+                                <rect key="frame" x="94" y="119" width="226" height="32"/>
+                                <segments>
+                                    <segment title="Front Camera"/>
+                                    <segment title="Back Camera"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeCameraDirection:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vzb-B6-11x"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,12 +52,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TQw-i1-0TK" secondAttribute="bottom" constant="109" id="8Z9-Ka-L5T"/>
                             <constraint firstItem="Nqd-Ac-qQL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="205" id="9rf-EY-vKr"/>
                             <constraint firstItem="Nqd-Ac-qQL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9yE-dI-tqq"/>
+                            <constraint firstItem="Y5o-R4-S9b" firstAttribute="centerX" secondItem="Nqd-Ac-qQL" secondAttribute="centerX" id="Beg-QS-1bu"/>
                             <constraint firstItem="TQw-i1-0TK" firstAttribute="top" secondItem="Nqd-Ac-qQL" secondAttribute="bottom" constant="43" id="EFY-Ok-aWj"/>
                             <constraint firstItem="zHx-8I-3lN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NEf-ei-Tbj"/>
+                            <constraint firstItem="Y5o-R4-S9b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="RTY-EP-B0Q"/>
                             <constraint firstItem="TQw-i1-0TK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="Wfo-ho-5qI"/>
                             <constraint firstItem="Nqd-Ac-qQL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cQc-N3-CLg"/>
                             <constraint firstItem="zHx-8I-3lN" firstAttribute="top" secondItem="TQw-i1-0TK" secondAttribute="bottom" constant="44" id="fIC-Tb-hb1"/>
                             <constraint firstItem="TQw-i1-0TK" firstAttribute="centerX" secondItem="Nqd-Ac-qQL" secondAttribute="centerX" id="h5R-S6-uCl"/>
+                            <constraint firstItem="Y5o-R4-S9b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="wYH-qr-v1Q"/>
                         </constraints>
                     </view>
                     <connections>

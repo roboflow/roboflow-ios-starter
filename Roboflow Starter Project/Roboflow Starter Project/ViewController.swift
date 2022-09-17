@@ -20,7 +20,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     private var detectionOverlay: CALayer! = nil
     var currentPixelBuffer: CVPixelBuffer!
     
-    private let session = AVCaptureSession()
+    private let captureSession = AVCaptureSession()
     private var previewLayer: AVCaptureVideoPreviewLayer! = nil
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutput", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
@@ -86,26 +86,26 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             return
         }
         
-        session.beginConfiguration()
-        session.sessionPreset = .vga640x480
+        captureSession.beginConfiguration()
+        captureSession.sessionPreset = .vga640x480
         
         // Add a video input
-        guard session.canAddInput(deviceInput) else {
+        guard captureSession.canAddInput(deviceInput) else {
             print("Could not add video device input to the session")
-            session.commitConfiguration()
+            captureSession.commitConfiguration()
             return
         }
-        session.addInput(deviceInput)
+        captureSession.addInput(deviceInput)
         
-        if session.canAddOutput(videoDataOutput) {
-            session.addOutput(videoDataOutput)
+        if captureSession.canAddOutput(videoDataOutput) {
+            captureSession.addOutput(videoDataOutput)
             // Add a video data output
             videoDataOutput.alwaysDiscardsLateVideoFrames = true
             videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
             videoDataOutput.setSampleBufferDelegate(self, queue: videoDataOutputQueue)
         } else {
             print("Could not add video data output to the session")
-            session.commitConfiguration()
+            captureSession.commitConfiguration()
             return
         }
         
@@ -122,10 +122,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             print(error)
         }
         
-        session.commitConfiguration()
+        captureSession.commitConfiguration()
         
         DispatchQueue.main.async { [self] in
-            previewLayer = AVCaptureVideoPreviewLayer(session: session)
+            previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
             rootLayer = previewView.layer
             previewLayer.frame = rootLayer.bounds
@@ -135,6 +135,42 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             updateLayerGeometry()
             startCaptureSession()
         }
+    }
+    
+    
+    @IBAction func changeCameraDirection(_ sender: Any) {
+        switchCamera()
+    }
+    
+    func stopCaptureSession() {
+        self.captureSession.stopRunning()
+        
+        if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
+            for input in inputs {
+                self.captureSession.removeInput(input)
+            }
+        }
+    }
+    
+    func switchCamera() {
+        captureSession.beginConfiguration()
+        let currentInput = captureSession.inputs.first as? AVCaptureDeviceInput
+        captureSession.removeInput(currentInput!)
+        
+        guard let newCameraDevice = currentInput?.device.position == .back ? getCamera(with: .front) : getCamera(with: .back) else { return }
+        guard let newVideoInput = try? AVCaptureDeviceInput(device: newCameraDevice) else { return  }
+        captureSession.addInput(newVideoInput)
+        captureSession.commitConfiguration()
+    }
+    
+    func getCamera(with position: AVCaptureDevice.Position) -> AVCaptureDevice? {
+        guard let devices = AVCaptureDevice.devices(for: AVMediaType.video) as? [AVCaptureDevice] else {
+            return nil
+        }
+        
+        return devices.filter {
+            $0.position == position
+        }.first
     }
     
     func setupLayers() {
@@ -150,7 +186,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func startCaptureSession() {
         DispatchQueue.global(qos: .background).async { [self] in
-            session.startRunning()
+            captureSession.startRunning()
         }
     }
     
@@ -188,7 +224,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             } else {
                 let detectionResults: [RFObjectDetectionPrediction] = detections!
                 self.drawBoundingBoxesFrom(detections: detectionResults)
-
+                
                 //Caclulate and display the FPS of the ML inference
                 DispatchQueue.main.async { [self] in
                     let duration = start.distance(to: .now())
@@ -205,7 +241,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         detectionOverlay.sublayers = nil // Remove all the old recognized objects' bounding boxes from the UI
-
+        
         //Extract the dictionary values of the predicted class
         for detection in detections {
             let detectionInfo = detection.vals()
@@ -220,7 +256,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             guard let x = detectionInfo["x"] as? Float else {
                 return
             }
-
+            
             guard let y = detectionInfo["y"] as? Float else {
                 return
             }
@@ -228,7 +264,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             guard let width = detectionInfo["width"] as? Float else {
                 return
             }
-
+            
             guard let height = detectionInfo["height"] as? Float else {
                 return
             }
@@ -273,7 +309,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         let formattedString = NSMutableAttributedString(string: String(format: "\(identifier)\n\(confidenceString)"))
         let largeFont = UIFont(name: "Helvetica", size: 24.0)!
-
+        
         formattedString.addAttributes([NSAttributedString.Key.font: largeFont], range: NSRange(location: 0, length: identifier.count))
         formattedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: identifier.count + confidenceString.count + 1))
         
@@ -304,7 +340,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         return shapeLayer
     }
     
-    //Update the position of the bounding-box overlay 
+    //Update the position of the bounding-box overlay
     func updateLayerGeometry() {
         let bounds = rootLayer.bounds
         var scale: CGFloat
@@ -326,10 +362,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         CATransaction.commit()
     }
-        
+    
     //Starts upload flow for if a user wants to upload the camera frame where an incorrect image classification occured
     @IBAction func uploadImage(_ sender: Any) {
-
+        
         //Capture the current pixel buffer of the camera and convert it an image
         guard let pixelBuffer = currentPixelBuffer else {
             return
@@ -351,16 +387,16 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         alert.view.addConstraint(width)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
-             }))
+        }))
         alert.addAction(UIAlertAction(title: "Upload", style: .default, handler: { [self] (_) in
             //Upload the captured image to your dataset
             upload(image: rotatedImage)
         }))
-
+        
         self.present(alert, animated: true, completion: nil)
     }
     
-    //Uploads the incorrect classification frame 
+    //Uploads the incorrect classification frame
     func upload(image: UIImage) {
         let project = "cash-counter"
         
@@ -369,26 +405,28 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             var message: String!
             
             switch result {
-                case .Success:
-                    title = "Success!"
-                    message = " Your image has been uploaded to the open source training dataset for model improvement."
-                case .Duplicate:
-                    title = "Duplicate"
-                    message = "You attempted to upload a duplicate image."
-                case .Error:
-                    title = "Error"
-                    message = "An error occured while uploading your image."
-                @unknown default:
-                    return
+            case .Success:
+                title = "Success!"
+                message = " Your image has been uploaded to the open source training dataset for model improvement."
+            case .Duplicate:
+                title = "Duplicate"
+                message = "You attempted to upload a duplicate image."
+            case .Error:
+                title = "Error"
+                message = "An error occured while uploading your image."
+            @unknown default:
+                return
             }
             
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
-                     }))
+                }))
                 self.present(alert, animated: true, completion: nil)
             }
         }
     }
+    
+
     
 }
