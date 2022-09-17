@@ -70,7 +70,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         var deviceInput: AVCaptureDeviceInput!
         
         // Select a video device, make an input
-        guard let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first else {
+        guard let videoDevice = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .front).devices.first else {
             let alert = UIAlertController(
                 title: "No Camera Found",
                 message: "You must run this app on a physical device with a camera.", preferredStyle: UIAlertController.Style.alert)
