@@ -164,13 +164,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     func getCamera(with position: AVCaptureDevice.Position) -> AVCaptureDevice? {
-        guard let devices = AVCaptureDevice.devices(for: AVMediaType.video) as? [AVCaptureDevice] else {
-            return nil
-        }
-        
-        return devices.filter {
-            $0.position == position
-        }.first
+        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: position)
+        return discoverySession.devices.first
     }
     
     func setupLayers() {
