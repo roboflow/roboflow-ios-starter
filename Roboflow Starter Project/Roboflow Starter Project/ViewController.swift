@@ -36,7 +36,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loadRoboflowModelWith(model: "mask-wearing/11", threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
+        loadRoboflowModelWith(model: "mask-wearing", threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
         checkCameraAuthorization()
     }
     
