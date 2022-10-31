@@ -10,7 +10,7 @@ import AVFoundation
 import Vision
 import Roboflow
 
-var API_KEY = "ENTER_YOUR_API_KEY_HERE"
+var API_KEY = "mask-detection-only-api-key"
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loadRoboflowModelWith(model: "ENTER_YOUR_MODEL_NAME_HERE", threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
+        loadRoboflowModelWith(model: "mask-wearing", version: 18, threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
         checkCameraAuthorization()
     }
     
@@ -186,8 +186,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     //MARK: Model Inference
     //--------------------------
     
-    func loadRoboflowModelWith(model: String, threshold: Double, overlap: Double, maxObjects: Float) {
-        rf.load(model: model, modelVersion: 4) { [self] model, error, modelName, modelType in
+    func loadRoboflowModelWith(model: String, version: Int,  threshold: Double, overlap: Double, maxObjects: Float) {
+        rf.load(model: model, modelVersion: version) { [self] model, error, modelName, modelType in
             roboflowModel = model
             if error != nil {
                 print(error?.localizedDescription as Any)
@@ -407,7 +407,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     //Uploads the incorrect classification frame
     func upload(image: UIImage) {
-        let project = "cash-counter"
+        let project = "mask-wearing"
         
         rf.uploadImage(image: image, project: project) { result in
             var title: String!
