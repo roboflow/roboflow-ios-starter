@@ -10,7 +10,7 @@ import AVFoundation
 import Vision
 import Roboflow
 
-var API_KEY = "mask-detection-only-api-key"
+var API_KEY = "3S78rMKsITa0tAwKKL8s"
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loadRoboflowModelWith(model: "mask-wearing", version: 18, threshold: 0.5, overlap: 0.2, maxObjects: 100.0)
+        loadRoboflowModelWith(model: "roboflow-mask-wearing-ios", version: 11 , threshold: 0.1, overlap: 0.2, maxObjects: 100.0)
         checkCameraAuthorization()
     }
     

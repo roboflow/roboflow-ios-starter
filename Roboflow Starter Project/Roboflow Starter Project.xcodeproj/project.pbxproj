@@ -594,7 +594,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7SBQ39NG7G;
+				DEVELOPMENT_TEAM = 6QDK6789A6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Roboflow Starter Project/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"Camera access is needed for computer vision tasks\"";
@@ -624,7 +624,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7SBQ39NG7G;
+				DEVELOPMENT_TEAM = 6QDK6789A6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Roboflow Starter Project/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"Camera access is needed for computer vision tasks\"";
