@@ -7,8 +7,26 @@ To get started, you'll need to have [Xcode](https://apps.apple.com/us/app/xcode/
 Clone this [repository](https://github.com/roboflow-ai/roboflow-ios-starter), navigate to `roboflow-ios-starter/Roboflow Starter Project` directory and run `pod install`. This instals the Roboflow SDK in the project, ensuring it's ready for use.
 
 
+## Setting up Xcode 
+Open `Roboflow Starter Project.xcworkspace` with Xcode. Go to Xcode->Settings:
+
+![Xcode Settings](https://github.com/roboflow-ai/roboflow-ios-starter/blob/main/Screenshots/XcodeSettings.png)
+
+And click on Accounts: 
+![Xcode Accounts](https://github.com/roboflow-ai/roboflow-ios-starter/blob/main/Screenshots/Accounts.png)
+
+To add your account, click the + button, and follow the steps to add in your Apple ID:
+
+![Adding Apple ID](https://github.com/roboflow-ai/roboflow-ios-starter/blob/main/Screenshots/AppleID.png)
+
+Once you’ve done that, go to the Signing & Capabilities section of Xcode: 
+
+
 ## Running the app on your Device
 Because the app requires the use of the camera, it has to be run on a physical device to use its functionality; not the simulator. To do this, first make sure your iPhone or iPad has Developer Mode enabled. Once you’ve done that, your device will appear as an option in Xcode:
+
+![Running App on Physical iPhone from Xcode](https://github.com/roboflow-ai/roboflow-ios-starter/blob/main/Screenshots/RunningApp.png)
+
 
 ## SDK Initialization
 This project uses an API key generated specifically for this project, but if you have your own model, you can add your own API key in the `var API_KEY` in `ViewController.swift`
