@@ -2,7 +2,7 @@
 
 This project shows you how you can get started developing computer vision iOS apps with the [Roboflow SDK](https://blog.roboflow.com/roboflow-ios-sdk/). It uses a model trained to recognize whether a user is wearing a mask or not.. 
 
-To get started, you'll need to have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) installed, as well as [Cocoapods](Cocoapods). You can install Cocoapods by running either `sudo gem install cocoapods` (if you have Ruby installed) or `brew install cocoapods` (if you have the [Homebrew](https://brew.sh/)package manager installed)
+To get started, you'll need to have [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) installed, as well as [Cocoapods](Cocoapods). You can install Cocoapods by running either `sudo gem install cocoapods` (if you have Ruby installed) or `brew install cocoapods` (if you have the [Homebrew](https://brew.sh/) package manager installed).
 
 Clone this [repository](https://github.com/roboflow-ai/roboflow-ios-starter), navigate to `roboflow-ios-starter/Roboflow Starter Project` directory and run `pod install`. This instals the Roboflow SDK in the project, ensuring it's ready for use.
 
