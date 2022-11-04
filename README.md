@@ -21,6 +21,10 @@ To add your account, click the + button, and follow the steps to add in your App
 
 Once you’ve done that, go to the Signing & Capabilities section of Xcode: 
 
+![Signing and Capabilities](https://github.com/roboflow-ai/roboflow-ios-starter/blob/main/Screenshots/SigningAndCapabilities.png)
+
+And add your Apple ID under “Team”. 
+
 
 ## Running the app on your Device
 Because the app requires the use of the camera, it has to be run on a physical device to use its functionality; not the simulator. To do this, first make sure your iPhone or iPad has Developer Mode enabled. Once you’ve done that, your device will appear as an option in Xcode:
