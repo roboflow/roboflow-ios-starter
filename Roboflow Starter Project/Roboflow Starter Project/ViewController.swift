@@ -157,10 +157,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func switchCamera() {
         captureSession.beginConfiguration()
-        let currentInput = captureSession.inputs.first as? AVCaptureDeviceInput
-        captureSession.removeInput(currentInput!)
+        guard let currentInput = captureSession.inputs.first as? AVCaptureDeviceInput else {
+            return
+        }
+        captureSession.removeInput(currentInput)
         
-        guard let newCameraDevice = currentInput?.device.position == .back ? getCamera(with: .front) : getCamera(with: .back) else { return }
+        guard let newCameraDevice = currentInput.device.position == .back ? getCamera(with: .front) : getCamera(with: .back) else { return
+        }
         guard let newVideoInput = try? AVCaptureDeviceInput(device: newCameraDevice) else { return  }
         captureSession.addInput(newVideoInput)
         captureSession.commitConfiguration()
