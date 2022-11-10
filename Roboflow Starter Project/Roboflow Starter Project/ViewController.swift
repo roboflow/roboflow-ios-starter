@@ -410,7 +410,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     //Uploads the incorrect classification frame
     func upload(image: UIImage) {
-        let project = "mask-wearing"
+        let project = "roboflow-mask-wearing-ios"
         
         rf.uploadImage(image: image, project: project) { result in
             var title: String!
