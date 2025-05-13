@@ -6,7 +6,7 @@ target 'Roboflow Starter Project' do
   use_frameworks!
 
   # Pods for Roboflow Starter Project
-   pod 'Roboflow'
+   pod 'Roboflow', :path => '../../roboflow-swift'
 
   target 'Roboflow Starter ProjectTests' do
     inherit! :search_paths

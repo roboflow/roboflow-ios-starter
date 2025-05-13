@@ -14,9 +14,9 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>See https://roboflow.com</string>
+			<string>See LICENSE at https://roboflow.com</string>
 			<key>License</key>
-			<string>Commercial</string>
+			<string>Apache</string>
 			<key>Title</key>
 			<string>Roboflow</string>
 			<key>Type</key>

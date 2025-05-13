@@ -1,0 +1,6 @@
+framework module Roboflow {
+  umbrella header "Roboflow-umbrella.h"
+
+  export *
+  module * { export * }
+}

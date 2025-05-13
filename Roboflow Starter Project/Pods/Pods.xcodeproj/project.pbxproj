@@ -6,47 +6,53 @@
 	objectVersion = 55;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		C53D3D26ACF7A980A2376F43B05F7D7C /* Roboflow */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 7D509926C444110EF654A1C40159758F /* Build configuration list for PBXAggregateTarget "Roboflow" */;
-			buildPhases = (
-				4967333FF07B504880B784FEC92BEDD5 /* [CP] Copy XCFrameworks */,
-			);
-			dependencies = (
-			);
-			name = Roboflow;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		0AC76F9EBFDEA95E9B672625B30B303A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		2F9DF82F12BB1F862048D22681DF2CE2 /* Pods-Roboflow Starter Project-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 356679E9955CE2B26FDB63E02D6BF68C /* Pods-Roboflow Starter Project-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3645E71D24E075F43B149BB79AC1C3AC /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB85A3977822AC14FC4A96C6000C275 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-dummy.m */; };
-		3D6126D1861571DE2989AF14B676999C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		6F8BB95EE05B5D563D642E98792BA123 /* Pods-Roboflow Starter ProjectTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 035039E811ED2CC1A0EDD092C4DBF9F0 /* Pods-Roboflow Starter ProjectTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A629CB62C52B028BF99AB7453D3D8A9B /* Pods-Roboflow Starter Project-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6610E3C49E8D18AC5E0FB56E6E5C4D97 /* Pods-Roboflow Starter Project-dummy.m */; };
-		DE157D5AC129013983DAC22DC5F0F61F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E9126582841A8C91EE4A6CA35FD90427 /* Pods-Roboflow Starter ProjectTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F045222C2F8DB69152BBB9BCD8C108C /* Pods-Roboflow Starter ProjectTests-dummy.m */; };
-		FD9FEA2A75CDBEBE8F40CF8D47C55A17 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D4F0807DB7ED54B3E1581BC1C8591D /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		217D82FB18ADE23FD756E7FAB7682887 /* yolo11n_seg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC22B9757E99C10ACCEFE7E5B16C44F /* yolo11n_seg.swift */; };
+		277FA3DE37421FC139B2FFD4F76128BA /* Pods-Roboflow Starter ProjectTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F045222C2F8DB69152BBB9BCD8C108C /* Pods-Roboflow Starter ProjectTests-dummy.m */; };
+		330C2A69B52B0075EA08F621C2784A79 /* RFModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371CE62FB32D3590271E82892048A642 /* RFModel.swift */; };
+		33E2D286C23F5E0F8C94E422F529D345 /* Pods-Roboflow Starter Project-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6610E3C49E8D18AC5E0FB56E6E5C4D97 /* Pods-Roboflow Starter Project-dummy.m */; };
+		3522EBA330AE1D9836A2A501C621DC1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		364FD8EDF0C68FBAC3F344BE26659DAF /* RFPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBB61E86A23B79D2892C273F99FF6C9 /* RFPrediction.swift */; };
+		3AAE502A737E3F2E40C3F2ECAC0387E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		3C3C25AC9268D12C3022A210736C5E32 /* Roboflow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE4EBADA3959F20E2126AB71A93E956 /* Roboflow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		640FAF4EE257B5056F360666907FEAB5 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71D4F0807DB7ED54B3E1581BC1C8591D /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6642CEEFD052E593B0709D79DAEE0301 /* Roboflow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B09B62B6A230536D6F8C8B1E83679D /* Roboflow-dummy.m */; };
+		671EC4B280C539C978E653EBB629CF83 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB85A3977822AC14FC4A96C6000C275 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-dummy.m */; };
+		73C52F5FE27F6C681BD54E6C416B8A8F /* Pods-Roboflow Starter Project-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 356679E9955CE2B26FDB63E02D6BF68C /* Pods-Roboflow Starter Project-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76325D262EAD56C8CFD5387FDFF9146C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8958861D121FE7CF9F35D7F0281A39D6 /* String+Extension.swift */; };
+		775022C920898375505284F2A4A43F44 /* Roboflow.h in Headers */ = {isa = PBXBuildFile; fileRef = 334A5500E36ED48930567C27BE2C773B /* Roboflow.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7A708085CFC9B4CB974EF59B9B789FA6 /* RFInstanceSegmentationPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4998397FF93374527812C969DF14CE /* RFInstanceSegmentationPrediction.swift */; };
+		892AA470E9A5A91449B2E9F4630C214D /* RFObjectDetectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B882B2EFDB592C529FA70C47EC212AC4 /* RFObjectDetectionModel.swift */; };
+		896F63336B788846A738B3F1E9F87C82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		90F67EB627AC87674538AF12C1EB65E2 /* yolov5s.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D006D43B2869396E5A888EB985701E /* yolov5s.swift */; };
+		9A52CD43721A104F6D21618497081E54 /* Roboflow.docc in Sources */ = {isa = PBXBuildFile; fileRef = F8FB2854126BA6FED7E62CC246A4EEEE /* Roboflow.docc */; };
+		AAF1CB4086567293928385051D57BC56 /* yolov8_seg.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88AAB968AAC1174E761C02233B752E /* yolov8_seg.swift */; };
+		BF2EDF1F62B3501B7B939264B8D30E45 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */; };
+		BF6DDEFB056F42146ACE511015D5BEE1 /* RFInstanceSegmentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD5EDF89C8D3CC40F98BAB7510C5B4 /* RFInstanceSegmentationModel.swift */; };
+		C6E4E2047403D16CBC92C4AD1FFF566F /* Pods-Roboflow Starter ProjectTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 035039E811ED2CC1A0EDD092C4DBF9F0 /* Pods-Roboflow Starter ProjectTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB806492935447EA9DA0FFA6A0177238 /* Roboflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642A486CA1ECDE1654B6549AEF9AE1 /* Roboflow.swift */; };
+		DD1EC6B534B3B668267FADBE73B16413 /* UploadResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B120357B14A1E3B89BCB791A6FA96BE3 /* UploadResult.swift */; };
+		EAA9B220D003ADF2062099FE923E897A /* ThresholdProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708D72AD1AA6443DCAB08EDA0C886E6 /* ThresholdProvider.swift */; };
+		F7B0D4AC42AFF80C0BB3C2E6723EB0C3 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F31BB9D1612453D5A7B759BD7A483FD /* UIImage+Extension.swift */; };
+		FD11AD521691640BF71B35899B3627C8 /* RFObjectDetectionPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC327279139EB847A138A37AADFEF05 /* RFObjectDetectionPrediction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A653D3587710F9076AEB137AFCF11DA /* PBXContainerItemProxy */ = {
+		4637629BE1EB807D924F8488A89DA7CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C53D3D26ACF7A980A2376F43B05F7D7C;
 			remoteInfo = Roboflow;
 		};
-		22B40808B35DE44EEE144684AF566A3F /* PBXContainerItemProxy */ = {
+		76320A91092425A9B0C64D343D7407A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C53D3D26ACF7A980A2376F43B05F7D7C;
 			remoteInfo = Roboflow;
 		};
-		4F5B8801861F53260FB51122177A03DD /* PBXContainerItemProxy */ = {
+		FB23542A8506708DD8ADB87DD25DD62A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -59,62 +65,93 @@
 		035039E811ED2CC1A0EDD092C4DBF9F0 /* Pods-Roboflow Starter ProjectTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Roboflow Starter ProjectTests-umbrella.h"; sourceTree = "<group>"; };
 		0A568D48DDCE2EE6592AD9C30B627744 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		0C7D6D267F2BDFD39B97D626F03EC230 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0EBB61E86A23B79D2892C273F99FF6C9 /* RFPrediction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RFPrediction.swift; path = Sources/Roboflow/Classes/RFPrediction.swift; sourceTree = "<group>"; };
 		0FFE96843CE31BAB62219D53EC8C8702 /* Pods-Roboflow Starter ProjectTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Roboflow Starter ProjectTests-Info.plist"; sourceTree = "<group>"; };
 		13AA2C195F48D372A3C470C5A7E9D020 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.modulemap"; sourceTree = "<group>"; };
 		16B850EAC14912E3C923C2D1A2BFD516 /* Pods-Roboflow Starter ProjectTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Roboflow Starter ProjectTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		18A16729B789036998320442BB64834E /* Pods-Roboflow Starter Project */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Roboflow Starter Project"; path = Pods_Roboflow_Starter_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3E70BD4F4A31841A551C62974638DD /* Pods-Roboflow Starter ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Roboflow Starter ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
-		1FC7FFA3D1B706E14474B34A107CC9CE /* Roboflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Roboflow.debug.xcconfig; sourceTree = "<group>"; };
+		1E03316D7969CC76288A4C57ED401947 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		252010B3E6F85B98AE4B76D35264E9EC /* Roboflow.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Roboflow.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2708D72AD1AA6443DCAB08EDA0C886E6 /* ThresholdProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThresholdProvider.swift; path = Sources/Roboflow/Classes/ThresholdProvider.swift; sourceTree = "<group>"; };
 		2AB85A3977822AC14FC4A96C6000C275 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-dummy.m"; sourceTree = "<group>"; };
+		2C581D83FD97B1394CD615A359D6B13D /* Roboflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Roboflow.release.xcconfig; sourceTree = "<group>"; };
 		318DF831A6D957733367A17A78E0CBAB /* Pods-Roboflow Starter Project-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Roboflow Starter Project-acknowledgements.markdown"; sourceTree = "<group>"; };
+		334A5500E36ED48930567C27BE2C773B /* Roboflow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Roboflow.h; path = Sources/Roboflow/Classes/Roboflow.h; sourceTree = "<group>"; };
 		356679E9955CE2B26FDB63E02D6BF68C /* Pods-Roboflow Starter Project-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Roboflow Starter Project-umbrella.h"; sourceTree = "<group>"; };
+		371CE62FB32D3590271E82892048A642 /* RFModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RFModel.swift; path = Sources/Roboflow/Classes/RFModel.swift; sourceTree = "<group>"; };
+		384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3A71C8953DB1042D89D04A52B0DDE188 /* Pods-Roboflow Starter Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Roboflow Starter Project.release.xcconfig"; sourceTree = "<group>"; };
+		45D006D43B2869396E5A888EB985701E /* yolov5s.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = yolov5s.swift; path = Sources/Roboflow/Classes/yolov5s.swift; sourceTree = "<group>"; };
 		46B2D379B34266F0B49E5D4E05DCF4C7 /* Pods-Roboflow Starter Project.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Roboflow Starter Project.modulemap"; sourceTree = "<group>"; };
 		490D9DF0596E9D86F85599A8F433D8D7 /* Pods-Roboflow Starter ProjectTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Roboflow Starter ProjectTests.modulemap"; sourceTree = "<group>"; };
+		4D4BAFE8805ABD6F07AE55C9401A90F2 /* Roboflow-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Roboflow-prefix.pch"; sourceTree = "<group>"; };
 		4EACAADBD1538ADC56137D80EBC8A007 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests"; path = Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F045222C2F8DB69152BBB9BCD8C108C /* Pods-Roboflow Starter ProjectTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Roboflow Starter ProjectTests-dummy.m"; sourceTree = "<group>"; };
 		5850FAC7FD5D43D63A306FB0CCDD6F91 /* Pods-Roboflow Starter Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Roboflow Starter Project.debug.xcconfig"; sourceTree = "<group>"; };
-		5DB9BECEC419590E6731278F11DC8DE9 /* Roboflow-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Roboflow-xcframeworks.sh"; sourceTree = "<group>"; };
+		5DFCD00C1CC201EF5D44C33847F31FAF /* Roboflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Roboflow.debug.xcconfig; sourceTree = "<group>"; };
 		6610E3C49E8D18AC5E0FB56E6E5C4D97 /* Pods-Roboflow Starter Project-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Roboflow Starter Project-dummy.m"; sourceTree = "<group>"; };
+		6DC22B9757E99C10ACCEFE7E5B16C44F /* yolo11n_seg.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = yolo11n_seg.swift; path = Sources/Roboflow/Classes/yolo11n_seg.swift; sourceTree = "<group>"; };
 		6DD750A5ABC32153EDBC87A5F7777F12 /* Pods-Roboflow Starter ProjectTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Roboflow Starter ProjectTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		6ED658FC000EADB56F5C2C907540D586 /* Pods-Roboflow Starter Project-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Roboflow Starter Project-Info.plist"; sourceTree = "<group>"; };
 		71D4F0807DB7ED54B3E1581BC1C8591D /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-umbrella.h"; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		757F32505DB139F390E3205F97158A34 /* Pods-Roboflow Starter ProjectTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Roboflow Starter ProjectTests"; path = Pods_Roboflow_Starter_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E97D66997885F918C9DA09714BBE079 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks.sh"; sourceTree = "<group>"; };
+		7F31BB9D1612453D5A7B759BD7A483FD /* UIImage+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		81ED8A370D4AEFBDE650F9E46F32D6CB /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8958861D121FE7CF9F35D7F0281A39D6 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8F5A3BDCFB7FD9C49BF1B815CACC7397 /* Pods-Roboflow Starter Project-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Roboflow Starter Project-frameworks.sh"; sourceTree = "<group>"; };
+		8FC327279139EB847A138A37AADFEF05 /* RFObjectDetectionPrediction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RFObjectDetectionPrediction.swift; path = Sources/Roboflow/Classes/RFObjectDetectionPrediction.swift; sourceTree = "<group>"; };
+		8FFF20CA5A7EA242E71AF30AD6F78149 /* Roboflow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Roboflow.modulemap; sourceTree = "<group>"; };
+		9A4998397FF93374527812C969DF14CE /* RFInstanceSegmentationPrediction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RFInstanceSegmentationPrediction.swift; path = Sources/Roboflow/Classes/RFInstanceSegmentationPrediction.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C6328B546413D7BD09329FDED185E42E /* Roboflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Roboflow.release.xcconfig; sourceTree = "<group>"; };
+		A2B09B62B6A230536D6F8C8B1E83679D /* Roboflow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Roboflow-dummy.m"; sourceTree = "<group>"; };
+		AADD5EDF89C8D3CC40F98BAB7510C5B4 /* RFInstanceSegmentationModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RFInstanceSegmentationModel.swift; path = Sources/Roboflow/Classes/RFInstanceSegmentationModel.swift; sourceTree = "<group>"; };
+		ABE4EBADA3959F20E2126AB71A93E956 /* Roboflow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Roboflow-umbrella.h"; sourceTree = "<group>"; };
+		B120357B14A1E3B89BCB791A6FA96BE3 /* UploadResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UploadResult.swift; path = Sources/Roboflow/Classes/UploadResult.swift; sourceTree = "<group>"; };
+		B882B2EFDB592C529FA70C47EC212AC4 /* RFObjectDetectionModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RFObjectDetectionModel.swift; path = Sources/Roboflow/Classes/RFObjectDetectionModel.swift; sourceTree = "<group>"; };
 		CE22F9C9484012C094E0F2C9E953BD74 /* Pods-Roboflow Starter ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Roboflow Starter ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D2EB0407DE3129869C32FEDFC5C17139 /* Roboflow.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = Roboflow.xcframework; sourceTree = "<group>"; };
+		CE642A486CA1ECDE1654B6549AEF9AE1 /* Roboflow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Roboflow.swift; path = Sources/Roboflow/Classes/Roboflow.swift; sourceTree = "<group>"; };
+		CE78D66E01D78FFC47E9BE5DEC019260 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		EC087DB7BDC6B6114AA35CDC9900D69E /* Roboflow */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Roboflow; path = Roboflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC16507958460E64E2DCCD570F666B12 /* Roboflow-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Roboflow-Info.plist"; sourceTree = "<group>"; };
+		ED88AAB968AAC1174E761C02233B752E /* yolov8_seg.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = yolov8_seg.swift; path = Sources/Roboflow/Classes/yolov8_seg.swift; sourceTree = "<group>"; };
 		F2CD98B41A02E8F85AF1EA5971BEEAC9 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F44A561B5851F668E0DD101E0DD6C2D3 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-Info.plist"; sourceTree = "<group>"; };
+		F8FB2854126BA6FED7E62CC246A4EEEE /* Roboflow.docc */ = {isa = PBXFileReference; includeInIndex = 1; name = Roboflow.docc; path = Sources/Roboflow/Classes/Roboflow.docc; sourceTree = "<group>"; };
 		FBD0BBAABBFB7A91B66ADFBF50A2727F /* Pods-Roboflow Starter Project-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Roboflow Starter Project-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		089AA47B9A41B237DBD377D3112B9522 /* Frameworks */ = {
+		2C87415B80629D8CDCB8301706954FB5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AC76F9EBFDEA95E9B672625B30B303A /* Foundation.framework in Frameworks */,
+				896F63336B788846A738B3F1E9F87C82 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45FE102C503D6061107AFCD927FD9BA8 /* Frameworks */ = {
+		608F925ECAC4B11B6D6B152BF13FB6B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE157D5AC129013983DAC22DC5F0F61F /* Foundation.framework in Frameworks */,
+				3AAE502A737E3F2E40C3F2ECAC0387E5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		90BA78394CFCB2CC6C14B536FCBF6E25 /* Frameworks */ = {
+		A0AB6740A75F5824115A57EE97007AF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D6126D1861571DE2989AF14B676999C /* Foundation.framework in Frameworks */,
+				3522EBA330AE1D9836A2A501C621DC1F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F9935B4B511E0672442CCB1D357AC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF2EDF1F62B3501B7B939264B8D30E45 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,14 +168,29 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		2D7E3B46D5A5F3D636700982F24DCED8 /* Products */ = {
+		10579D82765BB2073C139416A4AFE94D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				18A16729B789036998320442BB64834E /* Pods-Roboflow Starter Project */,
-				4EACAADBD1538ADC56137D80EBC8A007 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests */,
-				757F32505DB139F390E3205F97158A34 /* Pods-Roboflow Starter ProjectTests */,
+				8FFF20CA5A7EA242E71AF30AD6F78149 /* Roboflow.modulemap */,
+				A2B09B62B6A230536D6F8C8B1E83679D /* Roboflow-dummy.m */,
+				EC16507958460E64E2DCCD570F666B12 /* Roboflow-Info.plist */,
+				4D4BAFE8805ABD6F07AE55C9401A90F2 /* Roboflow-prefix.pch */,
+				ABE4EBADA3959F20E2126AB71A93E956 /* Roboflow-umbrella.h */,
+				5DFCD00C1CC201EF5D44C33847F31FAF /* Roboflow.debug.xcconfig */,
+				2C581D83FD97B1394CD615A359D6B13D /* Roboflow.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../roboflow-ios-starter/Roboflow Starter Project/Pods/Target Support Files/Roboflow";
+			sourceTree = "<group>";
+		};
+		25C18CFDB02C5DC947F1A02A3CDFCFEE /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				CE78D66E01D78FFC47E9BE5DEC019260 /* LICENSE */,
+				1E03316D7969CC76288A4C57ED401947 /* README.md */,
+				252010B3E6F85B98AE4B76D35264E9EC /* Roboflow.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		37329DAFCAB9A89DB2F1E81D9A3C3EFC /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests */ = {
@@ -158,6 +210,17 @@
 			path = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests";
 			sourceTree = "<group>";
 		};
+		3F6D85F2CB2C16F849EACF9A58377F46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18A16729B789036998320442BB64834E /* Pods-Roboflow Starter Project */,
+				4EACAADBD1538ADC56137D80EBC8A007 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests */,
+				757F32505DB139F390E3205F97158A34 /* Pods-Roboflow Starter ProjectTests */,
+				EC087DB7BDC6B6114AA35CDC9900D69E /* Roboflow */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		481B3974A014A86A78A0F501DB1CA810 /* Pods-Roboflow Starter ProjectTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,41 +237,39 @@
 			path = "Target Support Files/Pods-Roboflow Starter ProjectTests";
 			sourceTree = "<group>";
 		};
-		526BA95081282A76BFDBDD43166E4566 /* Support Files */ = {
+		63E5D8E4DAC45650E78294D49A7DB636 /* Roboflow */ = {
 			isa = PBXGroup;
 			children = (
-				5DB9BECEC419590E6731278F11DC8DE9 /* Roboflow-xcframeworks.sh */,
-				1FC7FFA3D1B706E14474B34A107CC9CE /* Roboflow.debug.xcconfig */,
-				C6328B546413D7BD09329FDED185E42E /* Roboflow.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Roboflow";
-			sourceTree = "<group>";
-		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		ADE13EBC4EBF57DC2B6B2DF777EC86FA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B209ABAA8FACA69853E7F94E54A49FDE /* Roboflow */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B209ABAA8FACA69853E7F94E54A49FDE /* Roboflow */ = {
-			isa = PBXGroup;
-			children = (
-				F4CA76438BE54B4F78CB3C063F8883A7 /* Frameworks */,
-				526BA95081282A76BFDBDD43166E4566 /* Support Files */,
+				AADD5EDF89C8D3CC40F98BAB7510C5B4 /* RFInstanceSegmentationModel.swift */,
+				9A4998397FF93374527812C969DF14CE /* RFInstanceSegmentationPrediction.swift */,
+				371CE62FB32D3590271E82892048A642 /* RFModel.swift */,
+				B882B2EFDB592C529FA70C47EC212AC4 /* RFObjectDetectionModel.swift */,
+				8FC327279139EB847A138A37AADFEF05 /* RFObjectDetectionPrediction.swift */,
+				0EBB61E86A23B79D2892C273F99FF6C9 /* RFPrediction.swift */,
+				F8FB2854126BA6FED7E62CC246A4EEEE /* Roboflow.docc */,
+				334A5500E36ED48930567C27BE2C773B /* Roboflow.h */,
+				CE642A486CA1ECDE1654B6549AEF9AE1 /* Roboflow.swift */,
+				2708D72AD1AA6443DCAB08EDA0C886E6 /* ThresholdProvider.swift */,
+				B120357B14A1E3B89BCB791A6FA96BE3 /* UploadResult.swift */,
+				6DC22B9757E99C10ACCEFE7E5B16C44F /* yolo11n_seg.swift */,
+				45D006D43B2869396E5A888EB985701E /* yolov5s.swift */,
+				ED88AAB968AAC1174E761C02233B752E /* yolov8_seg.swift */,
+				94B6FA037E906244ECAD17EF5E1A74F1 /* Extensions */,
+				25C18CFDB02C5DC947F1A02A3CDFCFEE /* Pod */,
+				10579D82765BB2073C139416A4AFE94D /* Support Files */,
 			);
 			name = Roboflow;
-			path = Roboflow;
+			path = "../../../roboflow-swift";
+			sourceTree = "<group>";
+		};
+		94B6FA037E906244ECAD17EF5E1A74F1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8958861D121FE7CF9F35D7F0281A39D6 /* String+Extension.swift */,
+				7F31BB9D1612453D5A7B759BD7A483FD /* UIImage+Extension.swift */,
+			);
+			name = Extensions;
+			path = Sources/Roboflow/Classes/Extensions;
 			sourceTree = "<group>";
 		};
 		B55A9906DF3B500978FB232A35B07015 /* Pods-Roboflow Starter Project */ = {
@@ -228,13 +289,21 @@
 			path = "Target Support Files/Pods-Roboflow Starter Project";
 			sourceTree = "<group>";
 		};
+		CE3D692D1CFE8062DD386AF363191029 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63E5D8E4DAC45650E78294D49A7DB636 /* Roboflow */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				CE3D692D1CFE8062DD386AF363191029 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				ADE13EBC4EBF57DC2B6B2DF777EC86FA /* Pods */,
-				2D7E3B46D5A5F3D636700982F24DCED8 /* Products */,
+				3F6D85F2CB2C16F849EACF9A58377F46 /* Products */,
 				0CAABF9C142A39500DDA0644B490CFDC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -242,43 +311,52 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				E4801F62A6B08CD9B5410329F1A18FDE /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F4CA76438BE54B4F78CB3C063F8883A7 /* Frameworks */ = {
+		E4801F62A6B08CD9B5410329F1A18FDE /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D2EB0407DE3129869C32FEDFC5C17139 /* Roboflow.xcframework */,
+				384DDA2CB25005BD6479B5987C619DD4 /* Foundation.framework */,
 			);
-			name = Frameworks;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		4E489451942507522AAC339709F4B8C9 /* Headers */ = {
+		4CD12A833A0D77394531CA983507D3D4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD9FEA2A75CDBEBE8F40CF8D47C55A17 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-umbrella.h in Headers */,
+				775022C920898375505284F2A4A43F44 /* Roboflow.h in Headers */,
+				3C3C25AC9268D12C3022A210736C5E32 /* Roboflow-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		56B9DD165AE14B22849F525D9FE99173 /* Headers */ = {
+		58F3AA4EC09FCA7EBC9DEC446709C6CD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F9DF82F12BB1F862048D22681DF2CE2 /* Pods-Roboflow Starter Project-umbrella.h in Headers */,
+				C6E4E2047403D16CBC92C4AD1FFF566F /* Pods-Roboflow Starter ProjectTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E5E4C481C0DC4CDD415C15D275AC85F6 /* Headers */ = {
+		69E3FABB7C26969D0DCD55CAFAB27A47 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F8BB95EE05B5D563D642E98792BA123 /* Pods-Roboflow Starter ProjectTests-umbrella.h in Headers */,
+				73C52F5FE27F6C681BD54E6C416B8A8F /* Pods-Roboflow Starter Project-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B720A8D00390943AAAF488E29D798CAE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640FAF4EE257B5056F360666907FEAB5 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,17 +365,17 @@
 /* Begin PBXNativeTarget section */
 		6FFF05C42CA9501E96984FC890266C69 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E92E0FA1903872A683937631F624A7A7 /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests" */;
+			buildConfigurationList = D4FC22805DA0EC9E217F67D683929BBA /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests" */;
 			buildPhases = (
-				4E489451942507522AAC339709F4B8C9 /* Headers */,
-				37D38E41FADB884DD77D48B435F10953 /* Sources */,
-				45FE102C503D6061107AFCD927FD9BA8 /* Frameworks */,
-				C76873C7521A79811165C3DDDE82CDD9 /* Resources */,
+				B720A8D00390943AAAF488E29D798CAE /* Headers */,
+				720C3B3CB39218BA052BE0A3246F35EE /* Sources */,
+				608F925ECAC4B11B6D6B152BF13FB6B6 /* Frameworks */,
+				E5BE1E6F48549C9463147725F16E1D65 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E6D3096B0618BDBE187B305C04C646A2 /* PBXTargetDependency */,
+				A773F4A005B10BFB17EE272BA41B6D5A /* PBXTargetDependency */,
 			);
 			name = "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests";
 			productName = Pods_Roboflow_Starter_Project_Roboflow_Starter_ProjectUITests;
@@ -306,36 +384,54 @@
 		};
 		BFF1C4A832171CDD103946823998F21A /* Pods-Roboflow Starter ProjectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C85FEDC9D8E5734552DE58B7E3506D6B /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter ProjectTests" */;
+			buildConfigurationList = 9137CBFA329099A5BF2DE7B3C6F12C11 /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter ProjectTests" */;
 			buildPhases = (
-				E5E4C481C0DC4CDD415C15D275AC85F6 /* Headers */,
-				494BC749CBEE0E250FB6AF7251D29708 /* Sources */,
-				089AA47B9A41B237DBD377D3112B9522 /* Frameworks */,
-				74F678717F410077D53EC9A2EB8F71B5 /* Resources */,
+				58F3AA4EC09FCA7EBC9DEC446709C6CD /* Headers */,
+				8B9F175E5A653D34BD6463EFB8EA0FEA /* Sources */,
+				2C87415B80629D8CDCB8301706954FB5 /* Frameworks */,
+				324C60A3697CA8DFE97468CA4B24EADD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				563D3E5326F865DED09B4FAD2A26EB51 /* PBXTargetDependency */,
+				2578C144F2D0A85FF1459F8BD72270DE /* PBXTargetDependency */,
 			);
 			name = "Pods-Roboflow Starter ProjectTests";
 			productName = Pods_Roboflow_Starter_ProjectTests;
 			productReference = 757F32505DB139F390E3205F97158A34 /* Pods-Roboflow Starter ProjectTests */;
 			productType = "com.apple.product-type.framework";
 		};
-		FE8AD1CA334446D71B8BDBE165385963 /* Pods-Roboflow Starter Project */ = {
+		C53D3D26ACF7A980A2376F43B05F7D7C /* Roboflow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 312407B40E703B78CD1279959C288AD5 /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter Project" */;
+			buildConfigurationList = 900A7354309A9EFF0441D7E8E3117E21 /* Build configuration list for PBXNativeTarget "Roboflow" */;
 			buildPhases = (
-				56B9DD165AE14B22849F525D9FE99173 /* Headers */,
-				59F269AB46BAF00467E0019C6F802D24 /* Sources */,
-				90BA78394CFCB2CC6C14B536FCBF6E25 /* Frameworks */,
-				52C7F90F87ADADB01D36D36366AF7CAB /* Resources */,
+				4CD12A833A0D77394531CA983507D3D4 /* Headers */,
+				B618EEB6E643E881E34650FE70308131 /* Sources */,
+				A0AB6740A75F5824115A57EE97007AF4 /* Frameworks */,
+				9ED6639A5AE8839D5B36A5CFFD4E927A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				076070820233013539DDDFFD6C0E0EFE /* PBXTargetDependency */,
+			);
+			name = Roboflow;
+			productName = Roboflow;
+			productReference = EC087DB7BDC6B6114AA35CDC9900D69E /* Roboflow */;
+			productType = "com.apple.product-type.framework";
+		};
+		FE8AD1CA334446D71B8BDBE165385963 /* Pods-Roboflow Starter Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6563658BF72ECABCB45ADEBDCFE148AB /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter Project" */;
+			buildPhases = (
+				69E3FABB7C26969D0DCD55CAFAB27A47 /* Headers */,
+				7A888649944DDD28315DEF515F1E661A /* Sources */,
+				E6F9935B4B511E0672442CCB1D357AC8 /* Frameworks */,
+				1BB6D0913F0116F3A97922C37474E919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				288F8495A0FF90156AFABADC20663138 /* PBXTargetDependency */,
 			);
 			name = "Pods-Roboflow Starter Project";
 			productName = Pods_Roboflow_Starter_Project;
@@ -348,8 +444,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -360,7 +456,9 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 2D7E3B46D5A5F3D636700982F24DCED8 /* Products */;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3F6D85F2CB2C16F849EACF9A58377F46 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -373,21 +471,28 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		52C7F90F87ADADB01D36D36366AF7CAB /* Resources */ = {
+		1BB6D0913F0116F3A97922C37474E919 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		74F678717F410077D53EC9A2EB8F71B5 /* Resources */ = {
+		324C60A3697CA8DFE97468CA4B24EADD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C76873C7521A79811165C3DDDE82CDD9 /* Resources */ = {
+		9ED6639A5AE8839D5B36A5CFFD4E927A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5BE1E6F48549C9463147725F16E1D65 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -396,71 +501,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4967333FF07B504880B784FEC92BEDD5 /* [CP] Copy XCFrameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Roboflow/Roboflow-xcframeworks-input-files.xcfilelist",
-			);
-			name = "[CP] Copy XCFrameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Roboflow/Roboflow-xcframeworks-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Roboflow/Roboflow-xcframeworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		37D38E41FADB884DD77D48B435F10953 /* Sources */ = {
+		720C3B3CB39218BA052BE0A3246F35EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3645E71D24E075F43B149BB79AC1C3AC /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-dummy.m in Sources */,
+				671EC4B280C539C978E653EBB629CF83 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		494BC749CBEE0E250FB6AF7251D29708 /* Sources */ = {
+		7A888649944DDD28315DEF515F1E661A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9126582841A8C91EE4A6CA35FD90427 /* Pods-Roboflow Starter ProjectTests-dummy.m in Sources */,
+				33E2D286C23F5E0F8C94E422F529D345 /* Pods-Roboflow Starter Project-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59F269AB46BAF00467E0019C6F802D24 /* Sources */ = {
+		8B9F175E5A653D34BD6463EFB8EA0FEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A629CB62C52B028BF99AB7453D3D8A9B /* Pods-Roboflow Starter Project-dummy.m in Sources */,
+				277FA3DE37421FC139B2FFD4F76128BA /* Pods-Roboflow Starter ProjectTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B618EEB6E643E881E34650FE70308131 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF6DDEFB056F42146ACE511015D5BEE1 /* RFInstanceSegmentationModel.swift in Sources */,
+				7A708085CFC9B4CB974EF59B9B789FA6 /* RFInstanceSegmentationPrediction.swift in Sources */,
+				330C2A69B52B0075EA08F621C2784A79 /* RFModel.swift in Sources */,
+				892AA470E9A5A91449B2E9F4630C214D /* RFObjectDetectionModel.swift in Sources */,
+				FD11AD521691640BF71B35899B3627C8 /* RFObjectDetectionPrediction.swift in Sources */,
+				364FD8EDF0C68FBAC3F344BE26659DAF /* RFPrediction.swift in Sources */,
+				9A52CD43721A104F6D21618497081E54 /* Roboflow.docc in Sources */,
+				CB806492935447EA9DA0FFA6A0177238 /* Roboflow.swift in Sources */,
+				6642CEEFD052E593B0709D79DAEE0301 /* Roboflow-dummy.m in Sources */,
+				76325D262EAD56C8CFD5387FDFF9146C /* String+Extension.swift in Sources */,
+				EAA9B220D003ADF2062099FE923E897A /* ThresholdProvider.swift in Sources */,
+				F7B0D4AC42AFF80C0BB3C2E6723EB0C3 /* UIImage+Extension.swift in Sources */,
+				DD1EC6B534B3B668267FADBE73B16413 /* UploadResult.swift in Sources */,
+				217D82FB18ADE23FD756E7FAB7682887 /* yolo11n_seg.swift in Sources */,
+				90F67EB627AC87674538AF12C1EB65E2 /* yolov5s.swift in Sources */,
+				AAF1CB4086567293928385051D57BC56 /* yolov8_seg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		076070820233013539DDDFFD6C0E0EFE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Roboflow;
-			target = C53D3D26ACF7A980A2376F43B05F7D7C /* Roboflow */;
-			targetProxy = 1A653D3587710F9076AEB137AFCF11DA /* PBXContainerItemProxy */;
-		};
-		563D3E5326F865DED09B4FAD2A26EB51 /* PBXTargetDependency */ = {
+		2578C144F2D0A85FF1459F8BD72270DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Roboflow Starter Project";
 			target = FE8AD1CA334446D71B8BDBE165385963 /* Pods-Roboflow Starter Project */;
-			targetProxy = 4F5B8801861F53260FB51122177A03DD /* PBXContainerItemProxy */;
+			targetProxy = FB23542A8506708DD8ADB87DD25DD62A /* PBXContainerItemProxy */;
 		};
-		E6D3096B0618BDBE187B305C04C646A2 /* PBXTargetDependency */ = {
+		288F8495A0FF90156AFABADC20663138 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Roboflow;
 			target = C53D3D26ACF7A980A2376F43B05F7D7C /* Roboflow */;
-			targetProxy = 22B40808B35DE44EEE144684AF566A3F /* PBXContainerItemProxy */;
+			targetProxy = 4637629BE1EB807D924F8488A89DA7CB /* PBXContainerItemProxy */;
+		};
+		A773F4A005B10BFB17EE272BA41B6D5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Roboflow;
+			target = C53D3D26ACF7A980A2376F43B05F7D7C /* Roboflow */;
+			targetProxy = 76320A91092425A9B0C64D343D7407A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -531,43 +639,6 @@
 			};
 			name = Debug;
 		};
-		2381478FDE4F3897E6D1E6F5D2BF14C8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE22F9C9484012C094E0F2C9E953BD74 /* Pods-Roboflow Starter ProjectTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter ProjectTests/Pods-Roboflow Starter ProjectTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Roboflow Starter ProjectTests/Pods-Roboflow Starter ProjectTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		2DE0D8898245310716431F92FA4989FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -630,24 +701,86 @@
 			};
 			name = Release;
 		};
-		37146904737F84EDD5B43460EC050F1D /* Debug */ = {
+		481E40C5EBC86CDB4830E62A3B58717F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FC7FFA3D1B706E14474B34A107CC9CE /* Roboflow.debug.xcconfig */;
+			baseConfigurationReference = 5DFCD00C1CC201EF5D44C33847F31FAF /* Roboflow.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Roboflow/Roboflow-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Roboflow/Roboflow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
+				MODULEMAP_FILE = "Target Support Files/Roboflow/Roboflow.modulemap";
+				PRODUCT_MODULE_NAME = Roboflow;
+				PRODUCT_NAME = Roboflow;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		39754BA4686D3213A7A0B756BE605764 /* Debug */ = {
+		4EC488D04A2C13824BF047ED725D3944 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C581D83FD97B1394CD615A359D6B13D /* Roboflow.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Roboflow/Roboflow-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Roboflow/Roboflow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Roboflow/Roboflow.modulemap";
+				PRODUCT_MODULE_NAME = Roboflow;
+				PRODUCT_NAME = Roboflow;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 5.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6717880EA76859C71D0B0733A87D8107 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C7D6D267F2BDFD39B97D626F03EC230 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.debug.xcconfig */;
 			buildSettings = {
@@ -661,6 +794,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -684,9 +819,9 @@
 			};
 			name = Debug;
 		};
-		6C9B85D4E3CDC76BDA23F3C8AC1EB916 /* Debug */ = {
+		8C013300D07E1D3C8B70CD6F436CC884 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5850FAC7FD5D43D63A306FB0CCDD6F91 /* Pods-Roboflow Starter Project.debug.xcconfig */;
+			baseConfigurationReference = CE22F9C9484012C094E0F2C9E953BD74 /* Pods-Roboflow Starter ProjectTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -698,7 +833,9 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-Info.plist";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter ProjectTests/Pods-Roboflow Starter ProjectTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -707,7 +844,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Roboflow Starter ProjectTests/Pods-Roboflow Starter ProjectTests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -721,101 +858,7 @@
 			};
 			name = Debug;
 		};
-		747117923F462D2E3AC1CDA4A15DD0C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F2CD98B41A02E8F85AF1EA5971BEEAC9 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A61F418A6CB6A9DCCE0676AE28CC0F39 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6328B546413D7BD09329FDED185E42E /* Roboflow.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		A9551BA8ECA8BB644DD2B0FE7418AFB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A71C8953DB1042D89D04A52B0DDE188 /* Pods-Roboflow Starter Project.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CBD8EA6629B355405931A93FEEC041A4 /* Release */ = {
+		91701A27C0906D087F9C376404351AF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1D3E70BD4F4A31841A551C62974638DD /* Pods-Roboflow Starter ProjectTests.release.xcconfig */;
 			buildSettings = {
@@ -829,6 +872,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter ProjectTests/Pods-Roboflow Starter ProjectTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
@@ -853,18 +898,128 @@
 			};
 			name = Release;
 		};
+		99B6AA79820E5C7EDBDBD85C4626827C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2CD98B41A02E8F85AF1EA5971BEEAC9 /* Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9B3B9C74286B3A2F4438B7C972B4430D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A71C8953DB1042D89D04A52B0DDE188 /* Pods-Roboflow Starter Project.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F8D5EAA00B71124342C165C7F65694DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5850FAC7FD5D43D63A306FB0CCDD6F91 /* Pods-Roboflow Starter Project.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		312407B40E703B78CD1279959C288AD5 /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter Project" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6C9B85D4E3CDC76BDA23F3C8AC1EB916 /* Debug */,
-				A9551BA8ECA8BB644DD2B0FE7418AFB0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -874,29 +1029,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D509926C444110EF654A1C40159758F /* Build configuration list for PBXAggregateTarget "Roboflow" */ = {
+		6563658BF72ECABCB45ADEBDCFE148AB /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				37146904737F84EDD5B43460EC050F1D /* Debug */,
-				A61F418A6CB6A9DCCE0676AE28CC0F39 /* Release */,
+				F8D5EAA00B71124342C165C7F65694DA /* Debug */,
+				9B3B9C74286B3A2F4438B7C972B4430D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C85FEDC9D8E5734552DE58B7E3506D6B /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter ProjectTests" */ = {
+		900A7354309A9EFF0441D7E8E3117E21 /* Build configuration list for PBXNativeTarget "Roboflow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2381478FDE4F3897E6D1E6F5D2BF14C8 /* Debug */,
-				CBD8EA6629B355405931A93FEEC041A4 /* Release */,
+				481E40C5EBC86CDB4830E62A3B58717F /* Debug */,
+				4EC488D04A2C13824BF047ED725D3944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E92E0FA1903872A683937631F624A7A7 /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests" */ = {
+		9137CBFA329099A5BF2DE7B3C6F12C11 /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter ProjectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				39754BA4686D3213A7A0B756BE605764 /* Debug */,
-				747117923F462D2E3AC1CDA4A15DD0C7 /* Release */,
+				8C013300D07E1D3C8B70CD6F436CC884 /* Debug */,
+				91701A27C0906D087F9C376404351AF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4FC22805DA0EC9E217F67D683929BBA /* Build configuration list for PBXNativeTarget "Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6717880EA76859C71D0B0733A87D8107 /* Debug */,
+				99B6AA79820E5C7EDBDBD85C4626827C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

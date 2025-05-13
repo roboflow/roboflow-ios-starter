@@ -10,7 +10,7 @@ import AVFoundation
 import Vision
 import Roboflow
 
-var API_KEY = "3S78rMKsITa0tAwKKL8s"
+var API_KEY = ""
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -30,13 +30,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     //Initialize the Roboflow SDK
     let rf = RoboflowMobile(apiKey: API_KEY)
-    var roboflowModel: RFObjectDetectionModel!
+    var roboflowModel: RFModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        loadRoboflowModelWith(model: "roboflow-mask-wearing-ios", version: 15 , threshold: 0.1, overlap: 0.2, maxObjects: 100.0)
+        loadRoboflowModelWith(model: "", version: 0, threshold: 0.1, overlap: 0.2, maxObjects: 100.0)
         checkCameraAuthorization()
     }
     
@@ -203,6 +203,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var start: DispatchTime!
     var end: DispatchTime!
     
+    var detecting: Bool = false
+    
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return
@@ -211,23 +213,29 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         let start: DispatchTime = .now()
         
-        roboflowModel?.detect(pixelBuffer: pixelBuffer, completion: { detections, error in
-            if error != nil {
-                print(error!)
-            } else {
-                let detectionResults: [RFObjectDetectionPrediction] = detections!
-                self.drawBoundingBoxesFrom(detections: detectionResults)
-                
-                //Caclulate and display the FPS of the ML inference
-                DispatchQueue.main.async { [self] in
-                    let duration = start.distance(to: .now())
-                    let durationDouble = duration.toDouble()
-                    var fps = 1 / durationDouble!
-                    fps = round(fps)
-                    fpsLabel.text = String(fps.description) + " FPS"
-                }
+        if !detecting {
+            detecting = true
+            DispatchQueue.global(qos: .userInteractive).async { [self] in
+                roboflowModel?.detect(pixelBuffer: pixelBuffer, completion: { detections, error in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        let detectionResults: [RFObjectDetectionPrediction] = detections!
+                        self.drawBoundingBoxesFrom(detections: detectionResults)
+                        self.detecting = false
+                        
+                        //Caclulate and display the FPS of the ML inference
+                        DispatchQueue.main.async { [self] in
+                            let duration = start.distance(to: .now())
+                            let durationDouble = duration.toDouble()
+                            var fps = 1 / durationDouble!
+                            fps = round(fps)
+                            fpsLabel.text = String(fps.description) + " FPS"
+                        }
+                    }
+                })
             }
-        })
+        }
     }
     
     //--------------------------
@@ -246,56 +254,67 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     func drawBoundingBoxesFrom(detections: [RFObjectDetectionPrediction]) {
-        CATransaction.begin()
-        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        detectionOverlay.sublayers = nil // Remove all the old recognized objects' bounding boxes from the UI
+            CATransaction.begin()
+            CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+            detectionOverlay.sublayers = nil // Remove all the old recognized objects' bounding boxes from the UI
+            
+            //Extract the dictionary values of the predicted class
         
-        //Extract the dictionary values of the predicted class
         for detection in detections {
-            let detectionInfo = detection.vals()
-            guard let detectedValue = detectionInfo["class"] as? String else {
-                return
+            let detectionInfo = detection.getValues()
+                guard let detectedValue = detectionInfo["class"] as? String else {
+                    return
+                }
+                
+                guard let confidence = detectionInfo["confidence"] as? Double else {
+                    return
+                }
+                
+                guard let x = detectionInfo["x"] as? Float else {
+                    return
+                }
+                
+                guard let y = detectionInfo["y"] as? Float else {
+                    return
+                }
+                
+                guard let width = detectionInfo["width"] as? Float else {
+                    return
+                }
+                
+                guard let height = detectionInfo["height"] as? Float else {
+                    return
+                }
+                
+                guard let color = detectionInfo["color"] as? [Int] else {
+                    return
+                }
+            
+                
+                let red: Float = Float(color[0])
+                let green: Float = Float(color[1])
+                let blue: Float = Float(color[2])
+                let boundingBoxColor = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 0.2)
+                let bounds = detectionOverlay.bounds
+                let xs = bounds.width/bufferSize.width
+                let ys = bounds.height/bufferSize.height
+                
+                //Create the CGRect for the bounding box, and draw it on the screen
+                let boundingBox: CGRect = CGRect(x: CGFloat(x)*xs, y: CGFloat(y)*ys, width: CGFloat(width)*xs, height: CGFloat(height)*ys)
+                print("y: \(boundingBox.midY)")
+                if let polygon = detectionInfo["points"] as? [[String:Float]] {
+                    print("parsing polygon")
+                    let poly = polygon.map { pt in
+                        return CGPoint(x: CGFloat(pt["x"]!), y: CGFloat(pt["y"]!))
+                    }
+                    drawPolygonBox(boundingBox: boundingBox, polygon: poly, mask: detectionInfo["mask"] as? [[UInt8]] ?? [[]], color: boundingBoxColor, detectedValue: detectedValue, confidence: confidence)
+                } else {
+                    drawBoundingBox(boundingBox: boundingBox, color: boundingBoxColor, detectedValue: detectedValue, confidence: confidence)
+                }
+                CATransaction.commit()
             }
-            
-            guard let confidence = detectionInfo["confidence"] as? Double else {
-                return
-            }
-            
-            guard let x = detectionInfo["x"] as? Float else {
-                return
-            }
-            
-            guard let y = detectionInfo["y"] as? Float else {
-                return
-            }
-            
-            guard let width = detectionInfo["width"] as? Float else {
-                return
-            }
-            
-            guard let height = detectionInfo["height"] as? Float else {
-                return
-            }
-            
-            guard let color = detectionInfo["color"] as? [Int] else {
-                return
-            }
-            
-            //Calculate the shape, position, and color values of the detection bounding box
-            let red: Int = color[0]
-            let green: Int = color[1]
-            let blue: Int = color[2]
-            let boundingBoxColor = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 0.2)
-            let bounds = detectionOverlay.bounds
-            let xs = bounds.width/bufferSize.width
-            let ys = bounds.height/bufferSize.height
-            
-            //Create the CGRect for the bounding box, and draw it on the screen
-            let boundingBox: CGRect = CGRect(x: CGFloat(x)*xs, y: CGFloat(y)*ys, width: CGFloat(width)*xs, height: CGFloat(height)*ys)
-            drawBoundingBox(boundingBox: boundingBox, color: boundingBoxColor, detectedValue: detectedValue, confidence: confidence)
+            CATransaction.commit()
         }
-        CATransaction.commit()
-    }
     
     //Create a bounding box and add it as a layer to the UI
     func drawBoundingBox(boundingBox: CGRect, color: UIColor, detectedValue: String, confidence: Double) {
@@ -309,11 +328,72 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         self.updateLayerGeometry()
     }
     
+    func drawPolygonBox(boundingBox: CGRect, polygon: [CGPoint], mask: [[UInt8]], color: UIColor, detectedValue: String, confidence: Double) {
+            let shapeLayer = self.createPolygonLayerWithBounds(boundingBox, polygon: polygon, mask2D: mask, color: color)
+            let textLayer = self.createTextSubLayerInBounds(boundingBox,
+                                                            identifier: detectedValue,
+                                                            confidence: VNConfidence(confidence))
+            shapeLayer.addSublayer(textLayer)
+            
+            detectionOverlay.addSublayer(shapeLayer)
+            self.updateLayerGeometry()
+        }
+    
+    func createPolygonLayerWithBounds(_ bounds: CGRect,
+                                          polygon: [CGPoint],
+                                          mask2D: [[UInt8]],
+                                          color: UIColor) -> CALayer {
+
+            let container = CALayer()
+            container.bounds = bounds
+            container.position = CGPoint(x: bounds.origin.x, y: bounds.origin.y)
+            container.name = "Found Object"
+            
+            
+
+            container.borderColor  = color.withAlphaComponent(0.4).cgColor
+            container.borderWidth  = 2
+            container.cornerRadius = 7
+            container.masksToBounds = true              // clip children to the box
+
+            let bounds = rootLayer.bounds
+            var scale: CGFloat
+            let xScale: CGFloat = bounds.size.width / CGFloat(bufferSize.height)
+            let yScale: CGFloat = bounds.size.height / CGFloat(bufferSize.width)
+            scale = fmax(xScale, yScale)
+            if scale.isInfinite {
+                scale = 1.0
+            }
+        
+            // ⬠ 3. polygon outline  ----------------------------------------------
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.frame = detectionOverlay.bounds
+            let path       = UIBezierPath()
+
+            guard let first = polygon.first else { return container }
+            path.move(to: first)
+            polygon.dropFirst().forEach { path.addLine(to: $0) }
+            path.close()
+
+            shapeLayer.path        = path.cgPath
+            shapeLayer.strokeColor = color.withAlphaComponent(0.4).cgColor
+            shapeLayer.fillColor   = color.withAlphaComponent(0.4).cgColor         // fill is from bitmap
+            shapeLayer.lineWidth   = 2
+            shapeLayer.lineJoin    = .round
+        
+            
+
+        
+            detectionOverlay.addSublayer(shapeLayer)
+
+            return container
+        }
+    
     //Create a layer displaying the classification result and it's confidence
     func createTextSubLayerInBounds(_ bounds: CGRect, identifier: String, confidence: VNConfidence) -> CATextLayer {
         let textLayer = CATextLayer()
         textLayer.name = "Object Label"
-        let confidenceString: String = ("Confidence: \(confidence)")
+        let confidenceString: String = ("x: \(bounds.midX) y: \(bounds.midY)")//("Confidence: \(confidence)")
         
         let formattedString = NSMutableAttributedString(string: String(format: "\(identifier)\n\(confidenceString)"))
         let largeFont = UIFont(name: "Helvetica", size: 24.0)!
@@ -329,7 +409,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         textLayer.contentsScale = 2.0 // retina rendering
         
         // Rotate the layer into screen orientation and scale and mirror
-        textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: -1.0, y: -1.0))
+//        textLayer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat(.pi / 2.0)).scaledBy(x: -1.0, y: -1.0))
         return textLayer
     }
     
