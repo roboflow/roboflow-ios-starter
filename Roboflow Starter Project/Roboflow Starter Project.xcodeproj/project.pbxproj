@@ -184,7 +184,7 @@
 				E4B079CC28CE930C00A2237F /* Sources */,
 				E4B079CD28CE930C00A2237F /* Frameworks */,
 				E4B079CE28CE930C00A2237F /* Resources */,
-				15D3F60ED9ADE691EB16CF15 /* [CP] Embed Pods Frameworks */,
+				40645A00A14DF5CA8A0E67C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,7 +222,7 @@
 				E4B079EC28CE931100A2237F /* Sources */,
 				E4B079ED28CE931100A2237F /* Frameworks */,
 				E4B079EE28CE931100A2237F /* Resources */,
-				5D18C18978C885A9301ABB97 /* [CP] Embed Pods Frameworks */,
+				2ACDA1EFF03D9C808F73AB77 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,21 +305,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15D3F60ED9ADE691EB16CF15 /* [CP] Embed Pods Frameworks */ = {
+		2ACDA1EFF03D9C808F73AB77 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2FEEF245376AE0855681D0D4 /* [CP] Check Pods Manifest.lock */ = {
@@ -344,21 +344,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5D18C18978C885A9301ABB97 /* [CP] Embed Pods Frameworks */ = {
+		40645A00A14DF5CA8A0E67C0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests/Pods-Roboflow Starter Project-Roboflow Starter ProjectUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Roboflow Starter Project/Pods-Roboflow Starter Project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		68D318704DF3FEF0F191E7FE /* [CP] Check Pods Manifest.lock */ = {
@@ -602,6 +602,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,6 +632,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

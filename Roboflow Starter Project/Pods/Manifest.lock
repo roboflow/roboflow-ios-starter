@@ -2,15 +2,15 @@ PODS:
   - Roboflow (1.1.22)
 
 DEPENDENCIES:
-  - Roboflow (from `../../roboflow-swift`)
+  - Roboflow (from `~/code/roboflow-swift`)
 
 EXTERNAL SOURCES:
   Roboflow:
-    :path: "../../roboflow-swift"
+    :path: "~/code/roboflow-swift"
 
 SPEC CHECKSUMS:
   Roboflow: e9dbcd4c973e694ef384937585da27c575545f9c
 
-PODFILE CHECKSUM: f8866ef22adf49650aa96e100a60849458c41feb
+PODFILE CHECKSUM: a466c291480bf497811a19742f1753ea965a9c22
 
 COCOAPODS: 1.16.2

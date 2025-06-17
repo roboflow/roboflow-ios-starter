@@ -10,9 +10,9 @@ import AVFoundation
 import Vision
 import Roboflow
 
-var API_KEY = ""
-var MODEL = ""
-var VERSION = 0
+var API_KEY = "fAUP2JJM8wO3A1suwhJu"
+var MODEL = "pill-type-id0-3gmru"
+var VERSION = 4
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
@@ -39,6 +39,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         // Do any additional setup after loading the view.
         
         loadRoboflowModelWith(model: MODEL, version: VERSION, threshold: 0.1, overlap: 0.2, maxObjects: 100.0)
+        
         checkCameraAuthorization()
     }
     
@@ -93,7 +94,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         }
         
         captureSession.beginConfiguration()
-        captureSession.sessionPreset = .vga640x480
+        captureSession.sessionPreset = .hd1920x1080
         
         // Add a video input
         guard captureSession.canAddInput(deviceInput) else {
@@ -193,11 +194,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func loadRoboflowModelWith(model: String, version: Int,  threshold: Double, overlap: Double, maxObjects: Float) {
         rf.load(model: model, modelVersion: version) { [self] model, error, modelName, modelType in
-            roboflowModel = model
             if error != nil {
                 print(error?.localizedDescription as Any)
             } else {
-                roboflowModel?.configure(threshold: threshold, overlap: overlap, maxObjects: maxObjects)
+                roboflowModel = model
+                roboflowModel?.configure(threshold: threshold, overlap: overlap, maxObjects: maxObjects, processingMode: .performance, maxNumberPoints: 20)
             }
         }
     }
@@ -303,12 +304,11 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 
                 //Create the CGRect for the bounding box, and draw it on the screen
                 let boundingBox: CGRect = CGRect(x: CGFloat(x)*xs, y: CGFloat(y)*ys, width: CGFloat(width)*xs, height: CGFloat(height)*ys)
-                print("y: \(boundingBox.midY)")
                 if let polygon = detectionInfo["points"] as? [[String:Float]] {
-                    print("parsing polygon")
                     let poly = polygon.map { pt in
                         return CGPoint(x: CGFloat(pt["x"]!), y: CGFloat(pt["y"]!))
                     }
+                    print("Nume Points: \(poly.count)")
                     drawPolygonBox(boundingBox: boundingBox, polygon: poly, mask: detectionInfo["mask"] as? [[UInt8]] ?? [[]], color: boundingBoxColor, detectedValue: detectedValue, confidence: confidence)
                 } else {
                     drawBoundingBox(boundingBox: boundingBox, color: boundingBoxColor, detectedValue: detectedValue, confidence: confidence)
