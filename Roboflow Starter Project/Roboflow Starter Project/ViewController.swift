@@ -10,9 +10,9 @@ import AVFoundation
 import Vision
 import Roboflow
 
-var API_KEY = "fAUP2JJM8wO3A1suwhJu"
-var MODEL = "pill-type-id0-3gmru"
-var VERSION = 4
+var API_KEY = ""
+var MODEL = ""
+var VERSION = 0
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
